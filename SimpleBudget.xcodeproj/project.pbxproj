@@ -13,6 +13,8 @@
 		D64187A7215F5920009814F1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A3215F5920009814F1 /* RealmSwift.framework */; };
 		D64187AA215F59E3009814F1 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64187A9215F59E3009814F1 /* Budget.swift */; };
 		D64187AC215F5DA2009814F1 /* Spend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64187AB215F5DA2009814F1 /* Spend.swift */; };
+		D64187B4215F6FA7009814F1 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187B2215F6FA7009814F1 /* RxFlow.framework */; };
+		D64187B5215F6FA7009814F1 /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187B3215F6FA7009814F1 /* NSObject_Rx.framework */; };
 		D685937D215F54D800BA4511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D685937C215F54D800BA4511 /* AppDelegate.swift */; };
 		D6859384215F54D900BA4511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6859383215F54D900BA4511 /* Assets.xcassets */; };
 		D6859387215F54D900BA4511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6859385215F54D900BA4511 /* LaunchScreen.storyboard */; };
@@ -36,6 +38,8 @@
 		D64187A3215F5920009814F1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		D64187A9215F59E3009814F1 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		D64187AB215F5DA2009814F1 /* Spend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spend.swift; sourceTree = "<group>"; };
+		D64187B2215F6FA7009814F1 /* RxFlow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxFlow.framework; path = Carthage/Build/iOS/RxFlow.framework; sourceTree = "<group>"; };
+		D64187B3215F6FA7009814F1 /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
 		D6859379215F54D800BA4511 /* SimpleBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D685937C215F54D800BA4511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6859383215F54D900BA4511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64187B4215F6FA7009814F1 /* RxFlow.framework in Frameworks */,
+				D64187B5215F6FA7009814F1 /* NSObject_Rx.framework in Frameworks */,
 				D64187A4215F5920009814F1 /* RxSwift.framework in Frameworks */,
 				D64187A5215F5920009814F1 /* RxCocoa.framework in Frameworks */,
 				D64187A6215F5920009814F1 /* Realm.framework in Frameworks */,
@@ -71,6 +77,8 @@
 		D641879F215F5920009814F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D64187B3215F6FA7009814F1 /* NSObject_Rx.framework */,
+				D64187B2215F6FA7009814F1 /* RxFlow.framework */,
 				D64187A2215F5920009814F1 /* Realm.framework */,
 				D64187A3215F5920009814F1 /* RealmSwift.framework */,
 				D64187A1215F5920009814F1 /* RxCocoa.framework */,
@@ -238,6 +246,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxFlow.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -247,6 +257,8 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxFlow.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NSObject_Rx.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
