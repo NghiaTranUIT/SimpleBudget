@@ -12,4 +12,5 @@ import RealmSwift
 class Spend: Object {
   @objc var note: String = ""
   @objc var amount: Int = 0
+  let budget = LinkingObjects(fromType: Budget.self, property: "spends")
 }

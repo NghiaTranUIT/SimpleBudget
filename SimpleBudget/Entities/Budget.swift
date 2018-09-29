@@ -15,4 +15,5 @@ class Budget: Object {
   @objc dynamic var currency = ""
   @objc dynamic var startDate = Date(timeIntervalSinceNow: 0)
   @objc dynamic var endDate: Date?
+  let spends = List<Spend>()
 }
