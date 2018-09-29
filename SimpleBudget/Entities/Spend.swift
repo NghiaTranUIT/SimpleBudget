@@ -9,4 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Spend
+class Spend: Object {
+    @objc var note: String = ""
+    @objc var amount: Int = 0
+}

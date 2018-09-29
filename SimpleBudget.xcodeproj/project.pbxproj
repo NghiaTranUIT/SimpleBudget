@@ -11,6 +11,8 @@
 		D64187A5215F5920009814F1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A1215F5920009814F1 /* RxCocoa.framework */; };
 		D64187A6215F5920009814F1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A2215F5920009814F1 /* Realm.framework */; };
 		D64187A7215F5920009814F1 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A3215F5920009814F1 /* RealmSwift.framework */; };
+		D64187AA215F59E3009814F1 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64187A9215F59E3009814F1 /* Budget.swift */; };
+		D64187AC215F5DA2009814F1 /* Spend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64187AB215F5DA2009814F1 /* Spend.swift */; };
 		D685937D215F54D800BA4511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D685937C215F54D800BA4511 /* AppDelegate.swift */; };
 		D6859384215F54D900BA4511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6859383215F54D900BA4511 /* Assets.xcassets */; };
 		D6859387215F54D900BA4511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6859385215F54D900BA4511 /* LaunchScreen.storyboard */; };
@@ -32,6 +34,8 @@
 		D64187A1215F5920009814F1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		D64187A2215F5920009814F1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		D64187A3215F5920009814F1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		D64187A9215F59E3009814F1 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		D64187AB215F5DA2009814F1 /* Spend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spend.swift; sourceTree = "<group>"; };
 		D6859379215F54D800BA4511 /* SimpleBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D685937C215F54D800BA4511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6859383215F54D900BA4511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +79,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D64187A8215F59D2009814F1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D64187A9215F59E3009814F1 /* Budget.swift */,
+				D64187AB215F5DA2009814F1 /* Spend.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		D6859370215F54D800BA4511 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,7 @@
 		D685937B215F54D800BA4511 /* SimpleBudget */ = {
 			isa = PBXGroup;
 			children = (
+				D64187A8215F59D2009814F1 /* Entities */,
 				D685937C215F54D800BA4511 /* AppDelegate.swift */,
 				D6859383215F54D900BA4511 /* Assets.xcassets */,
 				D6859385215F54D900BA4511 /* LaunchScreen.storyboard */,
@@ -244,6 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64187AC215F5DA2009814F1 /* Spend.swift in Sources */,
+				D64187AA215F59E3009814F1 /* Budget.swift in Sources */,
 				D685937D215F54D800BA4511 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
