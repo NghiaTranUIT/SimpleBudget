@@ -3,3 +3,4 @@ github "realm/realm-cocoa"
 github "RxSwiftCommunity/RxFlow"
 github "RxSwiftCommunity/RxRealm"
 github "RxSwiftCommunity/NSObject-Rx"
+github "RxSwiftCommunity/Action" ~> 3.6.0

@@ -24,6 +24,7 @@
 		D6859387215F54D900BA4511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6859385215F54D900BA4511 /* LaunchScreen.storyboard */; };
 		D6859392215F54D900BA4511 /* SimpleBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6859391215F54D900BA4511 /* SimpleBudgetTests.swift */; };
 		D6A1FE632160661700A5F07D /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A1FE622160661700A5F07D /* AppFlow.swift */; };
+		D6A39BBE216070C600D4643F /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A39BBD216070C600D4643F /* Action.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D6859391215F54D900BA4511 /* SimpleBudgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBudgetTests.swift; sourceTree = "<group>"; };
 		D6859393215F54D900BA4511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6A1FE622160661700A5F07D /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		D6A39BBD216070C600D4643F /* Action.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Action.framework; path = Carthage/Build/iOS/Action.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				D64187A4215F5920009814F1 /* RxSwift.framework in Frameworks */,
 				D64187A5215F5920009814F1 /* RxCocoa.framework in Frameworks */,
 				D64187A6215F5920009814F1 /* Realm.framework in Frameworks */,
+				D6A39BBE216070C600D4643F /* Action.framework in Frameworks */,
 				D64187A7215F5920009814F1 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +107,7 @@
 		D641879F215F5920009814F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6A39BBD216070C600D4643F /* Action.framework */,
 				D64187B3215F6FA7009814F1 /* NSObject_Rx.framework */,
 				D64187B2215F6FA7009814F1 /* RxFlow.framework */,
 				D64187A2215F5920009814F1 /* Realm.framework */,
@@ -295,6 +299,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxFlow.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Action.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -306,6 +311,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxFlow.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NSObject_Rx.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Action.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
