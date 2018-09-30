@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Budget: Object {
+  @objc dynamic var id = UUID().uuidString
   @objc dynamic var name = ""
   @objc dynamic var amount: Int = 0
   @objc dynamic var currency = ""

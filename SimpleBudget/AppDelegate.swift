@@ -7,6 +7,7 @@
 //
 
 import NSObject_Rx
+import RealmSwift
 import RxFlow
 import RxSwift
 import UIKit
@@ -20,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   let disposeBag = DisposeBag()
 
-  let budgetService = try! BudgetService(config: .defaultConfiguration)
+  let budgetService = try! BudgetService(config: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
 
   lazy var appServices = {
     AppServices(budgetService: budgetService)
