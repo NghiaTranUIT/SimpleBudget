@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3237F88CC8DFEED5F3A307EF /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237FA16B13ED4A2E89245AA /* AppStep.swift */; };
+		3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */; };
+		3237FCC8D611947342E32C72 /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F560C25EBF206D0038F8 /* BudgetListViewController.swift */; };
+		3237FDDDC0AE8C2AD6730100 /* BudgetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237FDBCB1291AE8F81304E5 /* BudgetListViewModel.swift */; };
 		D64187A4215F5920009814F1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A0215F5920009814F1 /* RxSwift.framework */; };
 		D64187A5215F5920009814F1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A1215F5920009814F1 /* RxCocoa.framework */; };
 		D64187A6215F5920009814F1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A2215F5920009814F1 /* Realm.framework */; };
@@ -19,6 +23,7 @@
 		D6859384215F54D900BA4511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6859383215F54D900BA4511 /* Assets.xcassets */; };
 		D6859387215F54D900BA4511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6859385215F54D900BA4511 /* LaunchScreen.storyboard */; };
 		D6859392215F54D900BA4511 /* SimpleBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6859391215F54D900BA4511 /* SimpleBudgetTests.swift */; };
+		D6A1FE632160661700A5F07D /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A1FE622160661700A5F07D /* AppFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetFlow.swift; sourceTree = "<group>"; };
+		3237F560C25EBF206D0038F8 /* BudgetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
+		3237FA16B13ED4A2E89245AA /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
+		3237FDBCB1291AE8F81304E5 /* BudgetListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetListViewModel.swift; sourceTree = "<group>"; };
 		D64187A0215F5920009814F1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		D64187A1215F5920009814F1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		D64187A2215F5920009814F1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -48,6 +57,7 @@
 		D685938D215F54D900BA4511 /* SimpleBudgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleBudgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6859391215F54D900BA4511 /* SimpleBudgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBudgetTests.swift; sourceTree = "<group>"; };
 		D6859393215F54D900BA4511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6A1FE622160661700A5F07D /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3237F82C6AE72AEE9FAD14EB /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				3237FCB638AABA51B2BC5B3A /* BudgetList */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		3237FCB638AABA51B2BC5B3A /* BudgetList */ = {
+			isa = PBXGroup;
+			children = (
+				3237F560C25EBF206D0038F8 /* BudgetListViewController.swift */,
+				3237FDBCB1291AE8F81304E5 /* BudgetListViewModel.swift */,
+			);
+			path = BudgetList;
+			sourceTree = "<group>";
+		};
 		D641879F215F5920009814F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +145,10 @@
 		D685937B215F54D800BA4511 /* SimpleBudget */ = {
 			isa = PBXGroup;
 			children = (
+				D6A1FE612160660C00A5F07D /* Flows */,
+				D6A1FE602160653400A5F07D /* Services */,
 				D64187A8215F59D2009814F1 /* Entities */,
+				3237F82C6AE72AEE9FAD14EB /* Scene */,
 				D685937C215F54D800BA4511 /* AppDelegate.swift */,
 				D6859383215F54D900BA4511 /* Assets.xcassets */,
 				D6859385215F54D900BA4511 /* LaunchScreen.storyboard */,
@@ -136,6 +166,23 @@
 			path = SimpleBudgetTests;
 			sourceTree = "<group>";
 		};
+		D6A1FE602160653400A5F07D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D6A1FE612160660C00A5F07D /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				D6A1FE622160661700A5F07D /* AppFlow.swift */,
+				3237FA16B13ED4A2E89245AA /* AppStep.swift */,
+				3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,10 +191,10 @@
 			buildConfigurationList = D6859396215F54D900BA4511 /* Build configuration list for PBXNativeTarget "SimpleBudget" */;
 			buildPhases = (
 				D6859375215F54D800BA4511 /* Sources */,
+				D64187AE215F5FB2009814F1 /* Swift Format */,
 				D6859376215F54D800BA4511 /* Frameworks */,
 				D6859377215F54D800BA4511 /* Resources */,
 				D641879E215F57E2009814F1 /* Carthage */,
-				D64187AE215F5FB2009814F1 /* Swift Format */,
 			);
 			buildRules = (
 			);
@@ -290,8 +337,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D64187AC215F5DA2009814F1 /* Spend.swift in Sources */,
+				D6A1FE632160661700A5F07D /* AppFlow.swift in Sources */,
 				D64187AA215F59E3009814F1 /* Budget.swift in Sources */,
 				D685937D215F54D800BA4511 /* AppDelegate.swift in Sources */,
+				3237F88CC8DFEED5F3A307EF /* AppStep.swift in Sources */,
+				3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */,
+				3237FCC8D611947342E32C72 /* BudgetListViewController.swift in Sources */,
+				3237FDDDC0AE8C2AD6730100 /* BudgetListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
