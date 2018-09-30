@@ -7,4 +7,14 @@ import Foundation
 import RxFlow
 import RxSwift
 
-class BudgetListViewModel: Stepper {}
+class BudgetListViewModel: Stepper {
+  var budgets: Observable<[Budget]>
+
+  private let budgetService: BudgetServiceType
+
+  init(budgetService: BudgetServiceType) {
+    self.budgetService = budgetService
+
+    budgets = budgetService.budgets()
+  }
+}

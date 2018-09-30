@@ -12,7 +12,12 @@ class BudgetFlow: Flow {
     return rootViewController
   }
 
+  private let services: AppServices
   private let rootViewController = UINavigationController()
+
+  init(services: AppServices) {
+    self.services = services
+  }
 
   deinit {
     print("\(type(of: self)): \(#function)")
@@ -28,9 +33,12 @@ class BudgetFlow: Flow {
   }
 
   private func navigateToBudgetList() -> NextFlowItems {
-    let viewController = BudgetListViewController()
-    let viewModel = BudgetListViewModel()
+    let viewModel = BudgetListViewModel(budgetService: services.budgetService)
+
+    var viewController = BudgetListViewController()
     viewController.title = "Budget List"
+    viewController.bindViewModel(to: viewModel)
+
     rootViewController.pushViewController(viewController, animated: true)
 
     return .one(flowItem: NextFlowItem(nextPresentable: viewController, nextStepper: viewModel))

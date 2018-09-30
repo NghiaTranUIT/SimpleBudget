@@ -11,14 +11,16 @@ import RxFlow
 import UIKit
 
 class AppFlow: Flow {
-  private let window: UIWindow
-
   var root: Presentable {
     return window
   }
 
-  init(window: UIWindow) {
+  private let window: UIWindow
+  private let services: AppServices
+
+  init(window: UIWindow, services: AppServices) {
     self.window = window
+    self.services = services
   }
 
   deinit {
@@ -37,7 +39,7 @@ class AppFlow: Flow {
   }
 
   private func navigateToBudgetList() -> NextFlowItems {
-    let budgetFlow = BudgetFlow()
+    let budgetFlow = BudgetFlow(services: services)
 
     Flows.whenReady(flow1: budgetFlow) { [unowned self] root in
       self.window.rootViewController = root

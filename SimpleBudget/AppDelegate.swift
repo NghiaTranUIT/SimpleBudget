@@ -6,6 +6,7 @@
 //  Copyright © 2018 khoi. All rights reserved.
 //
 
+import NSObject_Rx
 import RxFlow
 import RxSwift
 import UIKit
@@ -19,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   let disposeBag = DisposeBag()
 
+  let budgetService = try! BudgetService(config: .defaultConfiguration)
+
+  lazy var appServices = {
+    AppServices(budgetService: budgetService)
+  }()
+
   func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     guard let window = window else { return false }
 
@@ -28,9 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       print("did navigate to flow=\(flow) and step=\(step)")
     }).disposed(by: disposeBag)
 
-    appFlow = AppFlow(window: window)
+    appFlow = AppFlow(window: window, services: appServices)
 
     coordinator.coordinate(flow: appFlow, withStepper: OneStepper(withSingleStep: AppStep.budgetList))
     return true
   }
+}
+
+struct AppServices {
+  let budgetService: BudgetServiceType
 }
