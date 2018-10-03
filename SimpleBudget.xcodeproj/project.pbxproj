@@ -11,6 +11,12 @@
 		3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */; };
 		3237FCC8D611947342E32C72 /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F560C25EBF206D0038F8 /* BudgetListViewController.swift */; };
 		3237FDDDC0AE8C2AD6730100 /* BudgetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237FDBCB1291AE8F81304E5 /* BudgetListViewModel.swift */; };
+		D60D17D6216522C4001964A9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D17D4216522C4001964A9 /* Nimble.framework */; };
+		D60D17D7216522C4001964A9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D17D5216522C4001964A9 /* Quick.framework */; };
+		D60D17D921652347001964A9 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D17D821652347001964A9 /* RxBlocking.framework */; };
+		D60D17DC216523AB001964A9 /* RxBlocking.framework in Carthage */ = {isa = PBXBuildFile; fileRef = D60D17D821652347001964A9 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D60D17DD216523AB001964A9 /* Nimble.framework in Carthage */ = {isa = PBXBuildFile; fileRef = D60D17D4216522C4001964A9 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D60D17DE216523AB001964A9 /* Quick.framework in Carthage */ = {isa = PBXBuildFile; fileRef = D60D17D5216522C4001964A9 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D64187A4215F5920009814F1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A0215F5920009814F1 /* RxSwift.framework */; };
 		D64187A5215F5920009814F1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A1215F5920009814F1 /* RxCocoa.framework */; };
 		D64187A6215F5920009814F1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A2215F5920009814F1 /* Realm.framework */; };
@@ -46,11 +52,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D60D17DB21652395001964A9 /* Carthage */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D60D17DC216523AB001964A9 /* RxBlocking.framework in Carthage */,
+				D60D17DD216523AB001964A9 /* Nimble.framework in Carthage */,
+				D60D17DE216523AB001964A9 /* Quick.framework in Carthage */,
+			);
+			name = Carthage;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetFlow.swift; sourceTree = "<group>"; };
 		3237F560C25EBF206D0038F8 /* BudgetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
 		3237FA16B13ED4A2E89245AA /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		3237FDBCB1291AE8F81304E5 /* BudgetListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetListViewModel.swift; sourceTree = "<group>"; };
+		D60D17D4216522C4001964A9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		D60D17D5216522C4001964A9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		D60D17D821652347001964A9 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		D64187A0215F5920009814F1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		D64187A1215F5920009814F1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		D64187A2215F5920009814F1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -101,6 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D60D17D6216522C4001964A9 /* Nimble.framework in Frameworks */,
+				D60D17D7216522C4001964A9 /* Quick.framework in Frameworks */,
+				D60D17D921652347001964A9 /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +157,9 @@
 		D641879F215F5920009814F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D60D17D821652347001964A9 /* RxBlocking.framework */,
+				D60D17D4216522C4001964A9 /* Nimble.framework */,
+				D60D17D5216522C4001964A9 /* Quick.framework */,
 				D6CCC46521607F480084BB36 /* Differentiator.framework */,
 				D6CCC46621607F480084BB36 /* RxDataSources.framework */,
 				D6A39BBD216070C600D4643F /* Action.framework */,
@@ -261,6 +292,7 @@
 				D6859389215F54D900BA4511 /* Sources */,
 				D685938A215F54D900BA4511 /* Frameworks */,
 				D685938B215F54D900BA4511 /* Resources */,
+				D60D17DB21652395001964A9 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -614,6 +646,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EMR59SFZRH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SimpleBudgetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -635,6 +671,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EMR59SFZRH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SimpleBudgetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
