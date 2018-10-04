@@ -35,6 +35,8 @@ class AppFlow: Flow {
     switch step {
     case .budgetList:
       return navigateToBudgetList()
+    default:
+      return .none
     }
   }
 

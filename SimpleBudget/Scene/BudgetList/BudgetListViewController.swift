@@ -18,6 +18,8 @@ class BudgetListViewController: UIViewController, Bindable {
     return tv
   }()
 
+  var addBudgetBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -31,11 +33,15 @@ class BudgetListViewController: UIViewController, Bindable {
       tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
       tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
     ])
+
+    navigationItem.rightBarButtonItem = addBudgetBarButtonItem
   }
 
   func setupBinding() {
     viewModel.budgets.bind(to: tableView.rx.items(cellIdentifier: "BudgetListTableViewCell", cellType: BudgetListTableViewCell.self)) { _, model, cell in
       cell.nameLabel.text = model.name
     }.disposed(by: rx.disposeBag)
+
+    addBudgetBarButtonItem.rx.action = viewModel.navigateToCreateBudgetAction
   }
 }

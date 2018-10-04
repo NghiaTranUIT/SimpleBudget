@@ -8,4 +8,6 @@ import RxFlow
 
 enum AppStep: Step {
   case budgetList
+  case createBudget
+  case createBudgetSuccess
 }

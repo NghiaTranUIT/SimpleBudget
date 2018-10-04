@@ -29,6 +29,10 @@ class BudgetFlow: Flow {
     switch step {
     case .budgetList:
       return navigateToBudgetList()
+    case .createBudget:
+      return navigateToCreateBudget()
+    case .createBudgetSuccess:
+      return popToRootViewController()
     }
   }
 
@@ -42,5 +46,21 @@ class BudgetFlow: Flow {
     rootViewController.pushViewController(viewController, animated: true)
 
     return .one(flowItem: NextFlowItem(nextPresentable: viewController, nextStepper: viewModel))
+  }
+
+  private func navigateToCreateBudget() -> NextFlowItems {
+    let viewModel = CreateBudgetViewModel(budgetService: services.budgetService)
+
+    var viewController = CreateBudgetViewController()
+    viewController.title = "Create Budget"
+    viewController.bindViewModel(to: viewModel)
+
+    rootViewController.pushViewController(viewController, animated: true)
+    return .one(flowItem: NextFlowItem(nextPresentable: viewController, nextStepper: viewModel))
+  }
+
+  private func popToRootViewController() -> NextFlowItems {
+    rootViewController.popToRootViewController(animated: true)
+    return .none
   }
 }

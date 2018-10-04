@@ -25,10 +25,14 @@
 		D64187AC215F5DA2009814F1 /* Spend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64187AB215F5DA2009814F1 /* Spend.swift */; };
 		D64187B4215F6FA7009814F1 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187B2215F6FA7009814F1 /* RxFlow.framework */; };
 		D64187B5215F6FA7009814F1 /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187B3215F6FA7009814F1 /* NSObject_Rx.framework */; };
+		D66761152163BE0500B07870 /* CreateBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66761142163BE0500B07870 /* CreateBudgetViewModel.swift */; };
+		D66761182163C51800B07870 /* CreateBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66761162163C51800B07870 /* CreateBudgetViewController.swift */; };
+		D66761192163C51800B07870 /* CreateBudgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66761172163C51800B07870 /* CreateBudgetViewController.xib */; };
 		D685937D215F54D800BA4511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D685937C215F54D800BA4511 /* AppDelegate.swift */; };
 		D6859384215F54D900BA4511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6859383215F54D900BA4511 /* Assets.xcassets */; };
 		D6859387215F54D900BA4511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6859385215F54D900BA4511 /* LaunchScreen.storyboard */; };
 		D6859392215F54D900BA4511 /* SimpleBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6859391215F54D900BA4511 /* SimpleBudgetTests.swift */; };
+		D6A03E8D2166363900F07CAC /* Observable+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A03E8C2166363900F07CAC /* Observable+ActivityIndicator.swift */; };
 		D6A1FE632160661700A5F07D /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A1FE622160661700A5F07D /* AppFlow.swift */; };
 		D6A39BBE216070C600D4643F /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A39BBD216070C600D4643F /* Action.framework */; };
 		D6A39BC02160739000D4643F /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A39BBF2160739000D4643F /* BudgetService.swift */; };
@@ -84,6 +88,9 @@
 		D64187AB215F5DA2009814F1 /* Spend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spend.swift; sourceTree = "<group>"; };
 		D64187B2215F6FA7009814F1 /* RxFlow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxFlow.framework; path = Carthage/Build/iOS/RxFlow.framework; sourceTree = "<group>"; };
 		D64187B3215F6FA7009814F1 /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
+		D66761142163BE0500B07870 /* CreateBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetViewModel.swift; sourceTree = "<group>"; };
+		D66761162163C51800B07870 /* CreateBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetViewController.swift; sourceTree = "<group>"; };
+		D66761172163C51800B07870 /* CreateBudgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateBudgetViewController.xib; sourceTree = "<group>"; };
 		D6859379215F54D800BA4511 /* SimpleBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D685937C215F54D800BA4511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6859383215F54D900BA4511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +99,7 @@
 		D685938D215F54D900BA4511 /* SimpleBudgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleBudgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6859391215F54D900BA4511 /* SimpleBudgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBudgetTests.swift; sourceTree = "<group>"; };
 		D6859393215F54D900BA4511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6A03E8C2166363900F07CAC /* Observable+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		D6A1FE622160661700A5F07D /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		D6A39BBD216070C600D4643F /* Action.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Action.framework; path = Carthage/Build/iOS/Action.framework; sourceTree = "<group>"; };
 		D6A39BBF2160739000D4643F /* BudgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetService.swift; sourceTree = "<group>"; };
@@ -138,6 +146,7 @@
 		3237F82C6AE72AEE9FAD14EB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				D667610D2163BBED00B07870 /* CreateBudget */,
 				3237FCB638AABA51B2BC5B3A /* BudgetList */,
 			);
 			path = Scene;
@@ -180,6 +189,16 @@
 				D64187AB215F5DA2009814F1 /* Spend.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		D667610D2163BBED00B07870 /* CreateBudget */ = {
+			isa = PBXGroup;
+			children = (
+				D66761142163BE0500B07870 /* CreateBudgetViewModel.swift */,
+				D66761162163C51800B07870 /* CreateBudgetViewController.swift */,
+				D66761172163C51800B07870 /* CreateBudgetViewController.xib */,
+			);
+			path = CreateBudget;
 			sourceTree = "<group>";
 		};
 		D6859370215F54D800BA4511 = {
@@ -259,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				D6A39BC52160790C00D4643F /* UITableView+Reusable.swift */,
+				D6A03E8C2166363900F07CAC /* Observable+ActivityIndicator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -271,7 +291,6 @@
 			buildConfigurationList = D6859396215F54D900BA4511 /* Build configuration list for PBXNativeTarget "SimpleBudget" */;
 			buildPhases = (
 				D6859375215F54D800BA4511 /* Sources */,
-				D64187AE215F5FB2009814F1 /* Swift Format */,
 				D6859376215F54D800BA4511 /* Frameworks */,
 				D6859377215F54D800BA4511 /* Resources */,
 				D641879E215F57E2009814F1 /* Carthage */,
@@ -348,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6859387215F54D900BA4511 /* LaunchScreen.storyboard in Resources */,
+				D66761192163C51800B07870 /* CreateBudgetViewController.xib in Resources */,
 				D6859384215F54D900BA4511 /* Assets.xcassets in Resources */,
 				D6A39BCC216079CA00D4643F /* BudgetListTableViewCell.xib in Resources */,
 			);
@@ -401,24 +421,6 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		D64187AE215F5FB2009814F1 /* Swift Format */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Format";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat .\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -427,6 +429,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D64187AC215F5DA2009814F1 /* Spend.swift in Sources */,
+				D66761152163BE0500B07870 /* CreateBudgetViewModel.swift in Sources */,
+				D66761182163C51800B07870 /* CreateBudgetViewController.swift in Sources */,
 				D6A1FE632160661700A5F07D /* AppFlow.swift in Sources */,
 				D6CCC46C216086150084BB36 /* NibLoadableView.swift in Sources */,
 				D64187AA215F59E3009814F1 /* Budget.swift in Sources */,
@@ -435,6 +439,7 @@
 				D6A39BC3216078B000D4643F /* Reusable.swift in Sources */,
 				D6A39BCB216079CA00D4643F /* BudgetListTableViewCell.swift in Sources */,
 				D6CCC46A216080A80084BB36 /* Bindable.swift in Sources */,
+				D6A03E8D2166363900F07CAC /* Observable+ActivityIndicator.swift in Sources */,
 				D685937D215F54D800BA4511 /* AppDelegate.swift in Sources */,
 				3237F88CC8DFEED5F3A307EF /* AppStep.swift in Sources */,
 				3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */,
