@@ -13,11 +13,13 @@ import RxSwift
 
 enum BudgetServiceError: Error {
   case creationFailed
+  case deletionFailed
 }
 
 protocol BudgetServiceType {
   func budgets() -> Observable<[Budget]>
   func createBudget(name: String, currency: String) -> Observable<Budget>
+  func deleteBudget(id: String) -> Observable<Void>
 }
 
 struct BudgetService: BudgetServiceType {
@@ -56,6 +58,26 @@ struct BudgetService: BudgetServiceType {
       }
 
       return Observable.just(budget)
+    }
+
+    return result ?? .empty()
+  }
+
+  func deleteBudget(id: String) -> Observable<Void> {
+    let result = withRealm("Delete a budget") { (realm) -> Observable<Void> in
+
+      guard let budgetToDelete = realm.object(ofType: Budget.self, forPrimaryKey: id) else {
+        return .just(())
+      }
+
+      guard let _ = try? realm.write({
+        realm.delete(budgetToDelete.spends)
+        realm.delete(budgetToDelete)
+      }) else {
+        return Observable.error(BudgetServiceError.deletionFailed)
+      }
+
+      return .just(())
     }
 
     return result ?? .empty()

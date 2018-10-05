@@ -42,6 +42,7 @@ class BudgetListViewController: UIViewController, Bindable {
       cell.nameLabel.text = model.name
     }.disposed(by: rx.disposeBag)
 
+    tableView.rx.modelDeleted(Budget.self).bind(to: viewModel.removeBudget).disposed(by: rx.disposeBag)
     addBudgetBarButtonItem.rx.action = viewModel.navigateToCreateBudgetAction
   }
 }

@@ -14,4 +14,8 @@ class Budget: Object {
   @objc dynamic var name = ""
   @objc dynamic var currency = ""
   let spends = List<Spend>()
+
+  override static func primaryKey() -> String? {
+    return "id"
+  }
 }

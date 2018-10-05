@@ -32,7 +32,7 @@ class CreateBudgetViewModel: Stepper {
         .map { _ in }
     }
   }()
-  
+
   private var createEnabled: Observable<Bool>
 
   private let budgetService: BudgetServiceType
@@ -45,5 +45,4 @@ class CreateBudgetViewModel: Stepper {
       .map { name, currency in !name.isEmpty && !currency.isEmpty }
       .distinctUntilChanged()
   }
-  
 }
