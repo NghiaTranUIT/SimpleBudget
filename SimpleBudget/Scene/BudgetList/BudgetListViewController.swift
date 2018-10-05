@@ -42,7 +42,16 @@ class BudgetListViewController: UIViewController, Bindable {
       cell.nameLabel.text = model.name
     }.disposed(by: rx.disposeBag)
 
-    tableView.rx.modelDeleted(Budget.self).bind(to: viewModel.removeBudget).disposed(by: rx.disposeBag)
+    tableView.rx
+      .modelDeleted(Budget.self)
+      .bind(to: viewModel.removeBudget)
+      .disposed(by: rx.disposeBag)
+    tableView.rx
+      .modelSelected(Budget.self)
+      .do(onNext: viewModel.navigateToSpendingList)
+      .subscribe()
+      .disposed(by: rx.disposeBag)
+
     addBudgetBarButtonItem.rx.action = viewModel.navigateToCreateBudgetAction
   }
 }

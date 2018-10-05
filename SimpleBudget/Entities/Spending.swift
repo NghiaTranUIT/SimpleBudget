@@ -1,5 +1,5 @@
 //
-//  Budget.swift
+//  Spending.swift
 //  SimpleBudget
 //
 //  Created by khoi on 9/29/18.
@@ -9,11 +9,12 @@
 import Foundation
 import RealmSwift
 
-class Budget: Object {
+class Spending: Object {
   @objc dynamic var id = UUID().uuidString
-  @objc dynamic var name = ""
-  @objc dynamic var currency = ""
-  let spendings = List<Spending>()
+  @objc dynamic var note: String = ""
+  @objc dynamic var amount: Int = 0
+  @objc dynamic var date: Date = Date()
+  let budget = LinkingObjects(fromType: Budget.self, property: "spendings")
 
   override static func primaryKey() -> String? {
     return "id"

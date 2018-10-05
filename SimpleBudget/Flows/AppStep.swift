@@ -10,4 +10,6 @@ enum AppStep: Step {
   case budgetList
   case createBudget
   case createBudgetSuccess
+
+  case spendingList(budgetId: String)
 }

@@ -32,4 +32,8 @@ class BudgetListViewModel: Stepper {
     .subscribe()
     .disposed(by: disposeBag)
   }
+
+  func navigateToSpendingList(budget: Budget) {
+    step.accept(AppStep.spendingList(budgetId: budget.id))
+  }
 }

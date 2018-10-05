@@ -20,6 +20,8 @@ protocol BudgetServiceType {
   func budgets() -> Observable<[Budget]>
   func createBudget(name: String, currency: String) -> Observable<Budget>
   func deleteBudget(id: String) -> Observable<Void>
+
+  func spending(budgetId: String) -> Observable<[Spending]>
 }
 
 struct BudgetService: BudgetServiceType {
@@ -71,13 +73,25 @@ struct BudgetService: BudgetServiceType {
       }
 
       guard let _ = try? realm.write({
-        realm.delete(budgetToDelete.spends)
+        realm.delete(budgetToDelete.spendings)
         realm.delete(budgetToDelete)
       }) else {
         return Observable.error(BudgetServiceError.deletionFailed)
       }
 
       return .just(())
+    }
+
+    return result ?? .empty()
+  }
+
+  func spending(budgetId: String) -> Observable<[Spending]> {
+    let result = withRealm("Getting spendings for budget Id \(budgetId)") { (realm) -> Observable<[Spending]> in
+      guard let budget = realm.object(ofType: Budget.self, forPrimaryKey: budgetId) else {
+        return .just([])
+      }
+
+      return Observable.collection(from: budget.spendings).map { $0.toArray() }
     }
 
     return result ?? .empty()
