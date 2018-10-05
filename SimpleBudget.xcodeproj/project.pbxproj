@@ -357,7 +357,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = khoi;
+				ORGANIZATIONNAME = SimpleBudget;
 				TargetAttributes = {
 					D6859378215F54D800BA4511 = {
 						CreatedOnToolsVersion = 10.0;
