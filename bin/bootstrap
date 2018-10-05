@@ -1,0 +1,4 @@
+#!/bin/sh
+
+carthage bootstrap --platform iOS --cache-builds
+cp Cartfile.resolved Carthage

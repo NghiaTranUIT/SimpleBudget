@@ -1,10 +1,12 @@
-# SimpleBudget
+# SimpleBudget 
+
+[![CircleCI](https://circleci.com/gh/khoi/SimpleBudget/tree/master.svg?style=svg)](https://circleci.com/gh/khoi/SimpleBudget/tree/master)
 
 A minimalist app to track where your 💸 goes.
 
 ## Getting started
 
-1. `carthage bootstrap --platform iOS`
+1. `./bin/bootstrap-if-needed`
 1. Hack away
 
 ## Workflows and Guidelines
