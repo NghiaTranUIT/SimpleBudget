@@ -4,6 +4,11 @@
 
 A minimalist app to track where your 💸 goes.
 
+|         | Features  |
+----------|-----------------
+🔐 | All data is stored locally. No ☁️ involved.
+:octocat: | Open source development.
+
 ## Getting started
 
 1. `./bin/bootstrap-if-needed`
