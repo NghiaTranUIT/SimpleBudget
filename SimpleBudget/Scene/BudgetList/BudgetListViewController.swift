@@ -20,6 +20,18 @@ class BudgetListViewController: UIViewController, Bindable {
 
   var addBudgetBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
 
+  lazy var dataSources: RxTableViewSectionedAnimatedDataSource<SectionOfBudget> = {
+    let dataSources = RxTableViewSectionedAnimatedDataSource<SectionOfBudget>(configureCell: { (_, tableView, indexPath, budget) -> UITableViewCell in
+      let cell = tableView.dequeueReusableCell(for: indexPath, cellClass: BudgetListTableViewCell.self)
+      cell.nameLabel.text = budget.name
+      return cell
+    })
+    dataSources.canEditRowAtIndexPath = { _, _ in
+      true
+    }
+    return dataSources
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -38,14 +50,17 @@ class BudgetListViewController: UIViewController, Bindable {
   }
 
   func setupBinding() {
-    viewModel.budgets.bind(to: tableView.rx.items(cellIdentifier: "BudgetListTableViewCell", cellType: BudgetListTableViewCell.self)) { _, model, cell in
-      cell.nameLabel.text = model.name
-    }.disposed(by: rx.disposeBag)
+    viewModel
+      .budgets
+      .map { [SectionOfBudget(header: "Budget", items: $0)] }
+      .bind(to: tableView.rx.items(dataSource: dataSources))
+      .disposed(by: rx.disposeBag)
 
     tableView.rx
       .modelDeleted(Budget.self)
       .bind(to: viewModel.removeBudget)
       .disposed(by: rx.disposeBag)
+
     tableView.rx
       .modelSelected(Budget.self)
       .do(onNext: viewModel.navigateToSpendingList)

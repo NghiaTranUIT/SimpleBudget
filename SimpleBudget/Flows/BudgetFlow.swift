@@ -35,6 +35,10 @@ class BudgetFlow: Flow {
       return popToRootViewController()
     case let .spendingList(budgetId):
       return navigateToSpendingList(budgetId: budgetId)
+    case let .addSpending(budgetId):
+      return navigateToAddSpending(budgetId: budgetId)
+    case .addSpendingSuccess:
+      return popViewController()
     }
   }
 
@@ -74,6 +78,22 @@ class BudgetFlow: Flow {
 
   private func popToRootViewController() -> NextFlowItems {
     rootViewController.popToRootViewController(animated: true)
+    return .none
+  }
+
+  private func navigateToAddSpending(budgetId: String) -> NextFlowItems {
+    let addSpendingViewModel = AddSpendingViewModel(budgetService: services.budgetService, budgetId: budgetId)
+
+    var addSpendingVC = AddSpendingViewController()
+    addSpendingVC.title = "Add Spending"
+    addSpendingVC.bindViewModel(to: addSpendingViewModel)
+
+    rootViewController.pushViewController(addSpendingVC, animated: true)
+    return .one(flowItem: NextFlowItem(nextPresentable: addSpendingVC, nextStepper: addSpendingViewModel))
+  }
+
+  private func popViewController() -> NextFlowItems {
+    rootViewController.popViewController(animated: true)
     return .none
   }
 }

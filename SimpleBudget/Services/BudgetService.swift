@@ -14,6 +14,8 @@ import RxSwift
 enum BudgetServiceError: Error {
   case creationFailed
   case deletionFailed
+  case addSpendingFailed
+  case deleteSpendingFailed
 }
 
 protocol BudgetServiceType {
@@ -22,6 +24,8 @@ protocol BudgetServiceType {
   func deleteBudget(id: String) -> Observable<Void>
 
   func spending(budgetId: String) -> Observable<[Spending]>
+  func addSpending(toBudget budgetId: String, note: String, amount: Int) -> Observable<Spending>
+  func deleteSpending(id: String) -> Observable<Void>
 }
 
 struct BudgetService: BudgetServiceType {
@@ -92,6 +96,48 @@ struct BudgetService: BudgetServiceType {
       }
 
       return Observable.collection(from: budget.spendings).map { $0.toArray() }
+    }
+
+    return result ?? .empty()
+  }
+
+  func addSpending(toBudget budgetId: String, note: String, amount: Int) -> Observable<Spending> {
+    let result = withRealm("Adding new spending") { (realm) -> Observable<Spending> in
+
+      guard let budget = realm.object(ofType: Budget.self, forPrimaryKey: budgetId) else {
+        return Observable.error(BudgetServiceError.addSpendingFailed)
+      }
+
+      let spending = Spending()
+      spending.note = note
+      spending.amount = amount
+
+      guard let _ = try? realm.write({
+        budget.spendings.append(spending)
+      }) else {
+        return Observable.error(BudgetServiceError.addSpendingFailed)
+      }
+
+      return Observable.just(spending)
+    }
+
+    return result ?? .empty()
+  }
+
+  func deleteSpending(id: String) -> Observable<Void> {
+    let result = withRealm("Delete a spending in budget") { (realm) -> Observable<Void> in
+
+      guard let spendingToDelete = realm.object(ofType: Spending.self, forPrimaryKey: id) else {
+        return .just(())
+      }
+
+      guard let _ = try? realm.write({
+        realm.delete(spendingToDelete)
+      }) else {
+        return Observable.error(BudgetServiceError.deleteSpendingFailed)
+      }
+
+      return .just(())
     }
 
     return result ?? .empty()

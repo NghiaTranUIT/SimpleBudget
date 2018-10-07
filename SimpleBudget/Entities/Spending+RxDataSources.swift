@@ -11,7 +11,7 @@ import RxDataSources
 
 extension Spending: IdentifiableType {
   var identity: String {
-    return id
+    return isInvalidated ? "" : id
   }
 }
 

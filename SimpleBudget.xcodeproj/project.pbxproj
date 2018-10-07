@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D50F09F2167C5FD00FFFD42 /* AddSpendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50F09E2167C5FD00FFFD42 /* AddSpendingViewModel.swift */; };
+		2D50F0A22167C64B00FFFD42 /* AddSpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50F0A02167C64B00FFFD42 /* AddSpendingViewController.swift */; };
+		2D50F0A32167C64B00FFFD42 /* AddSpendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D50F0A12167C64B00FFFD42 /* AddSpendingViewController.xib */; };
+		2D50F0A52168A63900FFFD42 /* Budget+RxDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50F0A42168A63900FFFD42 /* Budget+RxDataSources.swift */; };
 		3237F88CC8DFEED5F3A307EF /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237FA16B13ED4A2E89245AA /* AppStep.swift */; };
 		3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */; };
 		3237FCC8D611947342E32C72 /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F560C25EBF206D0038F8 /* BudgetListViewController.swift */; };
@@ -79,6 +83,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D50F09E2167C5FD00FFFD42 /* AddSpendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendingViewModel.swift; sourceTree = "<group>"; };
+		2D50F0A02167C64B00FFFD42 /* AddSpendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendingViewController.swift; sourceTree = "<group>"; };
+		2D50F0A12167C64B00FFFD42 /* AddSpendingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSpendingViewController.xib; sourceTree = "<group>"; };
+		2D50F0A42168A63900FFFD42 /* Budget+RxDataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+RxDataSources.swift"; sourceTree = "<group>"; };
 		3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetFlow.swift; sourceTree = "<group>"; };
 		3237F560C25EBF206D0038F8 /* BudgetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
 		3237FA16B13ED4A2E89245AA /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
@@ -155,12 +163,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D50F09D2167C5C900FFFD42 /* AddSpending */ = {
+			isa = PBXGroup;
+			children = (
+				2D50F0A02167C64B00FFFD42 /* AddSpendingViewController.swift */,
+				2D50F0A12167C64B00FFFD42 /* AddSpendingViewController.xib */,
+				2D50F09E2167C5FD00FFFD42 /* AddSpendingViewModel.swift */,
+			);
+			path = AddSpending;
+			sourceTree = "<group>";
+		};
 		3237F82C6AE72AEE9FAD14EB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				D68103C121677611009584E3 /* SpendingList */,
-				D667610D2163BBED00B07870 /* CreateBudget */,
+				2D50F09D2167C5C900FFFD42 /* AddSpending */,
 				3237FCB638AABA51B2BC5B3A /* BudgetList */,
+				D667610D2163BBED00B07870 /* CreateBudget */,
+				D68103C121677611009584E3 /* SpendingList */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -201,6 +220,7 @@
 				D64187A9215F59E3009814F1 /* Budget.swift */,
 				D64187AB215F5DA2009814F1 /* Spending.swift */,
 				D68103CE21677B83009584E3 /* Spending+RxDataSources.swift */,
+				2D50F0A42168A63900FFFD42 /* Budget+RxDataSources.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -397,6 +417,7 @@
 				D68103C7216776CA009584E3 /* SpendingListViewController.xib in Resources */,
 				D66761192163C51800B07870 /* CreateBudgetViewController.xib in Resources */,
 				D6859384215F54D900BA4511 /* Assets.xcassets in Resources */,
+				2D50F0A32167C64B00FFFD42 /* AddSpendingViewController.xib in Resources */,
 				D6A39BCC216079CA00D4643F /* BudgetListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,8 +478,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D64187AC215F5DA2009814F1 /* Spending.swift in Sources */,
+				2D50F09F2167C5FD00FFFD42 /* AddSpendingViewModel.swift in Sources */,
 				D66761152163BE0500B07870 /* CreateBudgetViewModel.swift in Sources */,
 				D66761182163C51800B07870 /* CreateBudgetViewController.swift in Sources */,
+				2D50F0A22167C64B00FFFD42 /* AddSpendingViewController.swift in Sources */,
 				D6A1FE632160661700A5F07D /* AppFlow.swift in Sources */,
 				D68103C32167761F009584E3 /* SpendingListViewModel.swift in Sources */,
 				D68103CA21677A2E009584E3 /* SpendingListTableViewCell.swift in Sources */,
@@ -473,6 +496,7 @@
 				D6A03E8D2166363900F07CAC /* Observable+ActivityIndicator.swift in Sources */,
 				D685937D215F54D800BA4511 /* AppDelegate.swift in Sources */,
 				D68103CF21677B83009584E3 /* Spending+RxDataSources.swift in Sources */,
+				2D50F0A52168A63900FFFD42 /* Budget+RxDataSources.swift in Sources */,
 				3237F88CC8DFEED5F3A307EF /* AppStep.swift in Sources */,
 				3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */,
 				3237FCC8D611947342E32C72 /* BudgetListViewController.swift in Sources */,
