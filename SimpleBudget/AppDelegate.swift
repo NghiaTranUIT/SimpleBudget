@@ -38,6 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     appFlow = AppFlow(window: window, services: appServices)
 
+    if !UserDefaults.standard.bool(forKey: Constants.UserDefaultsKeys.isInitialDataSeeded.rawValue) {
+      appServices.budgetService.seedData()
+      UserDefaults.standard.set(true, forKey: Constants.UserDefaultsKeys.isInitialDataSeeded.rawValue)
+    }
+
     coordinator.coordinate(flow: appFlow, withStepper: OneStepper(withSingleStep: AppStep.budgetList))
     return true
   }

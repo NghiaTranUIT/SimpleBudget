@@ -19,13 +19,21 @@ enum BudgetServiceError: Error {
 }
 
 protocol BudgetServiceType {
+  // Budget
   func budgets() -> Observable<[Budget]>
   func createBudget(name: String, currency: String) -> Observable<Budget>
   func deleteBudget(id: String) -> Observable<Void>
 
+  // Spending
   func spending(budgetId: String) -> Observable<[Spending]>
   func addSpending(toBudget budgetId: String, note: String, amount: Int) -> Observable<Spending>
   func deleteSpending(id: String) -> Observable<Void>
+
+  // Category
+  func categories() -> Observable<[Category]>
+
+  // Seed Data
+  func seedData()
 }
 
 struct BudgetService: BudgetServiceType {
@@ -141,5 +149,26 @@ struct BudgetService: BudgetServiceType {
     }
 
     return result ?? .empty()
+  }
+
+  func categories() -> Observable<[Category]> {
+    let result = withRealm("Getting categories list") { (realm) -> Observable<[Category]> in
+      return Observable.array(from: realm.objects(Category.self))
+    }
+
+    return result ?? .empty()
+  }
+
+  func seedData() {
+    _ = withRealm("Seeding data", action: { (realm) -> Void in
+      let seedCategories = ["Shopping", "Education", "Food", "Rent", "Misc"].map { name -> Category in
+        let c = Category()
+        c.name = name
+        return c
+      }
+      try? realm.write {
+        realm.add(seedCategories)
+      }
+    })
   }
 }

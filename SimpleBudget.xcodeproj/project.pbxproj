@@ -33,6 +33,7 @@
 		D66761182163C51800B07870 /* CreateBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66761162163C51800B07870 /* CreateBudgetViewController.swift */; };
 		D66761192163C51800B07870 /* CreateBudgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66761172163C51800B07870 /* CreateBudgetViewController.xib */; };
 		D673F523216A260B00F5F4B8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D673F522216A260B00F5F4B8 /* Category.swift */; };
+		D673F525216A283F00F5F4B8 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D673F524216A283F00F5F4B8 /* AppConstants.swift */; };
 		D68103C32167761F009584E3 /* SpendingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68103C22167761F009584E3 /* SpendingListViewModel.swift */; };
 		D68103C6216776CA009584E3 /* SpendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68103C4216776CA009584E3 /* SpendingListViewController.swift */; };
 		D68103C7216776CA009584E3 /* SpendingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68103C5216776CA009584E3 /* SpendingListViewController.xib */; };
@@ -107,6 +108,7 @@
 		D66761162163C51800B07870 /* CreateBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetViewController.swift; sourceTree = "<group>"; };
 		D66761172163C51800B07870 /* CreateBudgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateBudgetViewController.xib; sourceTree = "<group>"; };
 		D673F522216A260B00F5F4B8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		D673F524216A283F00F5F4B8 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D68103C22167761F009584E3 /* SpendingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListViewModel.swift; sourceTree = "<group>"; };
 		D68103C4216776CA009584E3 /* SpendingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListViewController.swift; sourceTree = "<group>"; };
 		D68103C5216776CA009584E3 /* SpendingListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingListViewController.xib; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				D6859383215F54D900BA4511 /* Assets.xcassets */,
 				D6859385215F54D900BA4511 /* LaunchScreen.storyboard */,
 				D6859388215F54D900BA4511 /* Info.plist */,
+				D673F524216A283F00F5F4B8 /* AppConstants.swift */,
 			);
 			path = SimpleBudget;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				2D50F0A52168A63900FFFD42 /* Budget+RxDataSources.swift in Sources */,
 				3237F88CC8DFEED5F3A307EF /* AppStep.swift in Sources */,
 				3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */,
+				D673F525216A283F00F5F4B8 /* AppConstants.swift in Sources */,
 				3237FCC8D611947342E32C72 /* BudgetListViewController.swift in Sources */,
 				3237FDDDC0AE8C2AD6730100 /* BudgetListViewModel.swift in Sources */,
 			);
