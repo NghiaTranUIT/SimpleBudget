@@ -19,12 +19,12 @@ enum BudgetServiceError: Error {
 }
 
 protocol BudgetServiceType {
-  func budgets() -> Observable<[Budget]>
-  func createBudget(name: String, currency: String) -> Observable<Budget>
-  func deleteBudget(id: String) -> Observable<Void>
+  func accounts() -> Observable<[Account]>
+  func createAccount(name: String, currency: String) -> Observable<Account>
+  func deleteAccount(id: String) -> Observable<Void>
 
-  func spending(budgetId: String) -> Observable<[Spending]>
-  func addSpending(toBudget budgetId: String, note: String, amount: Int) -> Observable<Spending>
+  func spending(accountId: String) -> Observable<[Spending]>
+  func addSpending(toAccount accountId: String, note: String, amount: Int) -> Observable<Spending>
   func deleteSpending(id: String) -> Observable<Void>
 }
 
@@ -44,41 +44,40 @@ struct BudgetService: BudgetServiceType {
     }
   }
 
-  func budgets() -> Observable<[Budget]> {
-    let result = withRealm("Getting budget list") { (realm) -> Observable<[Budget]> in
-      let budgets = realm.objects(Budget.self)
-      return Observable.collection(from: budgets).map { $0.toArray() }
+  func accounts() -> Observable<[Account]> {
+    let result = withRealm("Getting account list") { (realm) -> Observable<[Account]> in
+      return Observable.array(from: realm.objects(Account.self))
     }
 
     return result ?? .empty()
   }
 
-  func createBudget(name: String, currency: String) -> Observable<Budget> {
-    let result = withRealm("Creating new budget") { (realm) -> Observable<Budget> in
-      let budget = Budget()
-      budget.name = name
-      budget.currency = currency
+  func createAccount(name: String, currency: String) -> Observable<Account> {
+    let result = withRealm("Creating new budget") { (realm) -> Observable<Account> in
+      let account = Account()
+      account.name = name
+      account.currency = currency
 
-      guard let _ = try? realm.write({ realm.add(budget) }) else {
+      guard let _ = try? realm.write({ realm.add(account) }) else {
         return Observable.error(BudgetServiceError.creationFailed)
       }
 
-      return Observable.just(budget)
+      return Observable.just(account)
     }
 
     return result ?? .empty()
   }
 
-  func deleteBudget(id: String) -> Observable<Void> {
-    let result = withRealm("Delete a budget") { (realm) -> Observable<Void> in
+  func deleteAccount(id: String) -> Observable<Void> {
+    let result = withRealm("Deleting account \(id)") { (realm) -> Observable<Void> in
 
-      guard let budgetToDelete = realm.object(ofType: Budget.self, forPrimaryKey: id) else {
+      guard let accountToDelete = realm.object(ofType: Account.self, forPrimaryKey: id) else {
         return .just(())
       }
 
       guard let _ = try? realm.write({
-        realm.delete(budgetToDelete.spendings)
-        realm.delete(budgetToDelete)
+        realm.delete(accountToDelete.spendings)
+        realm.delete(accountToDelete)
       }) else {
         return Observable.error(BudgetServiceError.deletionFailed)
       }
@@ -89,22 +88,21 @@ struct BudgetService: BudgetServiceType {
     return result ?? .empty()
   }
 
-  func spending(budgetId: String) -> Observable<[Spending]> {
-    let result = withRealm("Getting spendings for budget Id \(budgetId)") { (realm) -> Observable<[Spending]> in
-      guard let budget = realm.object(ofType: Budget.self, forPrimaryKey: budgetId) else {
+  func spending(accountId: String) -> Observable<[Spending]> {
+    let result = withRealm("Getting spendings for account Id \(accountId)") { (realm) -> Observable<[Spending]> in
+      guard let budget = realm.object(ofType: Account.self, forPrimaryKey: accountId) else {
         return .just([])
       }
-
-      return Observable.collection(from: budget.spendings).map { $0.toArray() }
+      return Observable.array(from: budget.spendings)
     }
 
     return result ?? .empty()
   }
 
-  func addSpending(toBudget budgetId: String, note: String, amount: Int) -> Observable<Spending> {
+  func addSpending(toAccount accountId: String, note: String, amount: Int) -> Observable<Spending> {
     let result = withRealm("Adding new spending") { (realm) -> Observable<Spending> in
 
-      guard let budget = realm.object(ofType: Budget.self, forPrimaryKey: budgetId) else {
+      guard let budget = realm.object(ofType: Account.self, forPrimaryKey: accountId) else {
         return Observable.error(BudgetServiceError.addSpendingFailed)
       }
 
@@ -127,12 +125,12 @@ struct BudgetService: BudgetServiceType {
   func deleteSpending(id: String) -> Observable<Void> {
     let result = withRealm("Delete a spending in budget") { (realm) -> Observable<Void> in
 
-      guard let spendingToDelete = realm.object(ofType: Spending.self, forPrimaryKey: id) else {
+      guard let accountToDelete = realm.object(ofType: Spending.self, forPrimaryKey: id) else {
         return .just(())
       }
 
       guard let _ = try? realm.write({
-        realm.delete(spendingToDelete)
+        realm.delete(accountToDelete)
       }) else {
         return Observable.error(BudgetServiceError.deleteSpendingFailed)
       }

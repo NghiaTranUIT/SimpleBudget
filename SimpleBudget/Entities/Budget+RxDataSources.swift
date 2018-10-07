@@ -9,7 +9,7 @@
 import Foundation
 import RxDataSources
 
-extension Budget: IdentifiableType {
+extension Account: IdentifiableType {
   var identity: String {
     return isInvalidated ? "" : id
   }
@@ -17,7 +17,7 @@ extension Budget: IdentifiableType {
 
 struct SectionOfBudget {
   var header: String
-  var items: [Budget]
+  var items: [Account]
 }
 
 extension SectionOfBudget: AnimatableSectionModelType {
@@ -25,7 +25,7 @@ extension SectionOfBudget: AnimatableSectionModelType {
     return header
   }
 
-  init(original: SectionOfBudget, items: [Budget]) {
+  init(original: SectionOfBudget, items: [Account]) {
     self = original
     self.items = items
   }

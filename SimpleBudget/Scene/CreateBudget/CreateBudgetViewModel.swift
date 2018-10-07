@@ -24,7 +24,7 @@ class CreateBudgetViewModel: Stepper {
         .combineLatest(self.budgetName, self.budgetCurrency)
         .take(1)
         .flatMap {
-          self.budgetService.createBudget(name: $0, currency: $1)
+          self.budgetService.createAccount(name: $0, currency: $1)
         }
         .do(onNext: { _ in
           self.step.accept(AppStep.createBudgetSuccess)

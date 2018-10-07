@@ -57,12 +57,12 @@ class BudgetListViewController: UIViewController, Bindable {
       .disposed(by: rx.disposeBag)
 
     tableView.rx
-      .modelDeleted(Budget.self)
+      .modelDeleted(Account.self)
       .bind(to: viewModel.removeBudget)
       .disposed(by: rx.disposeBag)
 
     tableView.rx
-      .modelSelected(Budget.self)
+      .modelSelected(Account.self)
       .do(onNext: viewModel.navigateToSpendingList)
       .subscribe()
       .disposed(by: rx.disposeBag)

@@ -14,7 +14,7 @@ class Spending: Object {
   @objc dynamic var note: String = ""
   @objc dynamic var amount: Int = 0
   @objc dynamic var date: Date = Date()
-  let budget = LinkingObjects(fromType: Budget.self, property: "spendings")
+  let account = LinkingObjects(fromType: Account.self, property: "spendings")
 
   override static func primaryKey() -> String? {
     return "id"
