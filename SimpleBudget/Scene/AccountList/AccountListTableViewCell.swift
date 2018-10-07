@@ -1,5 +1,5 @@
 //
-//  BudgetListTableViewCell.swift
+//  AccountListTableViewCell.swift
 //  SimpleBudget
 //
 //  Created by khoi on 9/30/18.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class BudgetListTableViewCell: UITableViewCell, NibLoadableView {
+class AccountListTableViewCell: UITableViewCell, NibLoadableView {
   @IBOutlet var nameLabel: UILabel!
 }

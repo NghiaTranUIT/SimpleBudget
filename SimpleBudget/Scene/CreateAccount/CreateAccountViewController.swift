@@ -11,22 +11,22 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class CreateBudgetViewController: UIViewController, Bindable {
-  @IBOutlet var budgetNameLabel: UITextField!
+class CreateAccountViewController: UIViewController, Bindable {
+  @IBOutlet var accountNameLabel: UITextField!
 
   @IBOutlet var currencyLabel: UITextField!
 
   @IBOutlet var createBtn: UIButton!
 
-  var viewModel: CreateBudgetViewModel!
+  var viewModel: CreateAccountViewModel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
   }
 
   func setupBinding() {
-    budgetNameLabel.rx.text.orEmpty.bind(to: viewModel.budgetName).disposed(by: rx.disposeBag)
-    currencyLabel.rx.text.orEmpty.bind(to: viewModel.budgetCurrency).disposed(by: rx.disposeBag)
+    accountNameLabel.rx.text.orEmpty.bind(to: viewModel.accountName).disposed(by: rx.disposeBag)
+    currencyLabel.rx.text.orEmpty.bind(to: viewModel.accountCurrency).disposed(by: rx.disposeBag)
 
     createBtn.rx.action = viewModel.createAction
   }

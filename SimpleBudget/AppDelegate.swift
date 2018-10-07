@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     appFlow = AppFlow(window: window, services: appServices)
 
-    coordinator.coordinate(flow: appFlow, withStepper: OneStepper(withSingleStep: AppStep.budgetList))
+    coordinator.coordinate(flow: appFlow, withStepper: OneStepper(withSingleStep: AppStep.accountList))
     return true
   }
 }

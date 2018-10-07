@@ -8,13 +8,13 @@ import Foundation
 import RxFlow
 import RxSwift
 
-class BudgetListViewModel: Stepper {
-  var budgets: Observable<[Account]>
-  var removeBudget = PublishSubject<Account>()
+class AccountListViewModel: Stepper {
+  var accounts: Observable<[Account]>
+  var removeAccount = PublishSubject<Account>()
 
   lazy var navigateToCreateBudgetAction: CocoaAction = {
     CocoaAction { [unowned self] in
-      self.step.accept(AppStep.createBudget)
+      self.step.accept(AppStep.createAccount)
       return .empty()
     }
   }()
@@ -25,8 +25,8 @@ class BudgetListViewModel: Stepper {
   init(budgetService: BudgetServiceType) {
     self.budgetService = budgetService
 
-    budgets = budgetService.accounts()
-    removeBudget.flatMapLatest { (budget) -> Observable<Void> in
+    accounts = budgetService.accounts()
+    removeAccount.flatMapLatest { (budget) -> Observable<Void> in
       budgetService.deleteAccount(id: budget.id)
     }
     .subscribe()

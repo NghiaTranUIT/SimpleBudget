@@ -9,20 +9,20 @@ import RxDataSources
 import RxSwift
 import UIKit
 
-class BudgetListViewController: UIViewController, Bindable {
-  var viewModel: BudgetListViewModel!
+class AccountListViewController: UIViewController, Bindable {
+  var viewModel: AccountListViewModel!
 
   lazy var tableView: UITableView = {
     let tv = UITableView(frame: .zero)
-    tv.register(BudgetListTableViewCell.self)
+    tv.register(AccountListTableViewCell.self)
     return tv
   }()
 
   var addBudgetBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
 
-  lazy var dataSources: RxTableViewSectionedAnimatedDataSource<SectionOfBudget> = {
-    let dataSources = RxTableViewSectionedAnimatedDataSource<SectionOfBudget>(configureCell: { (_, tableView, indexPath, budget) -> UITableViewCell in
-      let cell = tableView.dequeueReusableCell(for: indexPath, cellClass: BudgetListTableViewCell.self)
+  lazy var dataSources: RxTableViewSectionedAnimatedDataSource<SectionOfAccount> = {
+    let dataSources = RxTableViewSectionedAnimatedDataSource<SectionOfAccount>(configureCell: { (_, tableView, indexPath, budget) -> UITableViewCell in
+      let cell = tableView.dequeueReusableCell(for: indexPath, cellClass: AccountListTableViewCell.self)
       cell.nameLabel.text = budget.name
       return cell
     })
@@ -51,14 +51,14 @@ class BudgetListViewController: UIViewController, Bindable {
 
   func setupBinding() {
     viewModel
-      .budgets
-      .map { [SectionOfBudget(header: "Budget", items: $0)] }
+      .accounts
+      .map { [SectionOfAccount(header: "Budget", items: $0)] }
       .bind(to: tableView.rx.items(dataSource: dataSources))
       .disposed(by: rx.disposeBag)
 
     tableView.rx
       .modelDeleted(Account.self)
-      .bind(to: viewModel.removeBudget)
+      .bind(to: viewModel.removeAccount)
       .disposed(by: rx.disposeBag)
 
     tableView.rx

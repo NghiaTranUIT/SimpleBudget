@@ -27,11 +27,11 @@ class BudgetFlow: Flow {
     guard let step = step as? AppStep else { return .none }
 
     switch step {
-    case .budgetList:
+    case .accountList:
       return navigateToBudgetList()
-    case .createBudget:
+    case .createAccount:
       return navigateToCreateBudget()
-    case .createBudgetSuccess:
+    case .createAccountSuccess:
       return popToRootViewController()
     case let .spendingList(budgetId):
       return navigateToSpendingList(budgetId: budgetId)
@@ -43,10 +43,10 @@ class BudgetFlow: Flow {
   }
 
   private func navigateToBudgetList() -> NextFlowItems {
-    let viewModel = BudgetListViewModel(budgetService: services.budgetService)
+    let viewModel = AccountListViewModel(budgetService: services.budgetService)
 
-    var viewController = BudgetListViewController()
-    viewController.title = "Budget List"
+    var viewController = AccountListViewController()
+    viewController.title = "Account List"
     viewController.bindViewModel(to: viewModel)
 
     rootViewController.pushViewController(viewController, animated: true)
@@ -55,10 +55,10 @@ class BudgetFlow: Flow {
   }
 
   private func navigateToCreateBudget() -> NextFlowItems {
-    let viewModel = CreateBudgetViewModel(budgetService: services.budgetService)
+    let viewModel = CreateAccountViewModel(budgetService: services.budgetService)
 
-    var viewController = CreateBudgetViewController()
-    viewController.title = "Create Budget"
+    var viewController = CreateAccountViewController()
+    viewController.title = "Create Account"
     viewController.bindViewModel(to: viewModel)
 
     rootViewController.pushViewController(viewController, animated: true)

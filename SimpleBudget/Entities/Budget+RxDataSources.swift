@@ -15,17 +15,17 @@ extension Account: IdentifiableType {
   }
 }
 
-struct SectionOfBudget {
+struct SectionOfAccount {
   var header: String
   var items: [Account]
 }
 
-extension SectionOfBudget: AnimatableSectionModelType {
+extension SectionOfAccount: AnimatableSectionModelType {
   var identity: String {
     return header
   }
 
-  init(original: SectionOfBudget, items: [Account]) {
+  init(original: SectionOfAccount, items: [Account]) {
     self = original
     self.items = items
   }

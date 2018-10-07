@@ -53,7 +53,7 @@ struct BudgetService: BudgetServiceType {
   }
 
   func createAccount(name: String, currency: String) -> Observable<Account> {
-    let result = withRealm("Creating new budget") { (realm) -> Observable<Account> in
+    let result = withRealm("Creating new account") { (realm) -> Observable<Account> in
       let account = Account()
       account.name = name
       account.currency = currency
@@ -123,7 +123,7 @@ struct BudgetService: BudgetServiceType {
   }
 
   func deleteSpending(id: String) -> Observable<Void> {
-    let result = withRealm("Delete a spending in budget") { (realm) -> Observable<Void> in
+    let result = withRealm("Delete a spending id \(id)") { (realm) -> Observable<Void> in
 
       guard let accountToDelete = realm.object(ofType: Spending.self, forPrimaryKey: id) else {
         return .just(())
