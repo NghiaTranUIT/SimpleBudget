@@ -7,9 +7,9 @@ import Foundation
 import RxFlow
 
 enum AppStep: Step {
-  case budgetList
-  case createBudget
-  case createBudgetSuccess
+  case accountList
+  case createAccount
+  case createAccountSuccess
 
   case spendingList(budgetId: String)
   case addSpending(budgetId: String)

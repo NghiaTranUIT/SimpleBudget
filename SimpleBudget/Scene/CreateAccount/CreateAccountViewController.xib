@@ -10,9 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateBudgetViewController" customModule="SimpleBudget" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateAccountViewController" customModule="SimpleBudget" customModuleProvider="target">
             <connections>
-                <outlet property="budgetNameLabel" destination="9Dw-Yr-cFN" id="kXf-6g-bGQ"/>
+                <outlet property="accountNameLabel" destination="9Dw-Yr-cFN" id="kXf-6g-bGQ"/>
                 <outlet property="createBtn" destination="1Kz-fW-Zi7" id="XaV-Zo-bIj"/>
                 <outlet property="currencyLabel" destination="T9J-gZ-NcC" id="fY4-F8-6hT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,8 +35,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kz-fW-Zi7">
-                    <rect key="frame" x="164" y="211" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kz-fW-Zi7">
+                    <rect key="frame" x="164" y="211" width="47" height="30"/>
                     <state key="normal" title="Button"/>
                 </button>
             </subviews>

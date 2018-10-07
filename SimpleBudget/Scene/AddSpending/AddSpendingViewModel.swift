@@ -20,7 +20,7 @@ class AddSpendingViewModel: Stepper {
       Observable.combineLatest(self.spendingNote, self.spendingAmount)
         .take(1)
         .flatMapLatest {
-          self.budgetService.addSpending(toBudget: self.budgetId, note: $0, amount: $1)
+          self.budgetService.addSpending(toAccount: self.budgetId, note: $0, amount: $1)
         }
         .do(onNext: { _ in
           self.step.accept(AppStep.addSpendingSuccess)

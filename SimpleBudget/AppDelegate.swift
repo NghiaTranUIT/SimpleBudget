@@ -43,7 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       UserDefaults.standard.set(true, forKey: Constants.UserDefaultsKeys.isInitialDataSeeded.rawValue)
     }
 
-    coordinator.coordinate(flow: appFlow, withStepper: OneStepper(withSingleStep: AppStep.budgetList))
+    coordinator.coordinate(flow: appFlow, withStepper: OneStepper(withSingleStep: AppStep.accountList))
+
     return true
   }
 }

@@ -31,7 +31,7 @@ class SpendingListViewModel: Stepper {
     self.budgetService = budgetService
     self.budgetId = budgetId
 
-    spendings = budgetService.spending(budgetId: budgetId)
+    spendings = budgetService.spending(accountId: budgetId)
     deleteSpending.flatMapLatest { (spending) -> Observable<Void> in
       budgetService.deleteSpending(id: spending.id)
     }

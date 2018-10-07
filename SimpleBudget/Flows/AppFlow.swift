@@ -33,7 +33,7 @@ class AppFlow: Flow {
     }
 
     switch step {
-    case .budgetList:
+    case .accountList:
       return navigateToBudgetList()
     default:
       return .none
@@ -47,6 +47,6 @@ class AppFlow: Flow {
       self.window.rootViewController = root
     }
 
-    return .one(flowItem: NextFlowItem(nextPresentable: budgetFlow, nextStepper: OneStepper(withSingleStep: AppStep.budgetList)))
+    return .one(flowItem: NextFlowItem(nextPresentable: budgetFlow, nextStepper: OneStepper(withSingleStep: AppStep.accountList)))
   }
 }

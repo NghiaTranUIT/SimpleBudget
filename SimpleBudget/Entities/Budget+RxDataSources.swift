@@ -9,23 +9,23 @@
 import Foundation
 import RxDataSources
 
-extension Budget: IdentifiableType {
+extension Account: IdentifiableType {
   var identity: String {
     return isInvalidated ? "" : id
   }
 }
 
-struct SectionOfBudget {
+struct SectionOfAccount {
   var header: String
-  var items: [Budget]
+  var items: [Account]
 }
 
-extension SectionOfBudget: AnimatableSectionModelType {
+extension SectionOfAccount: AnimatableSectionModelType {
   var identity: String {
     return header
   }
 
-  init(original: SectionOfBudget, items: [Budget]) {
+  init(original: SectionOfAccount, items: [Account]) {
     self = original
     self.items = items
   }
