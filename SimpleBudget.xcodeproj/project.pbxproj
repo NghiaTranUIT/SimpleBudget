@@ -11,6 +11,7 @@
 		2D50F0A22167C64B00FFFD42 /* AddSpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50F0A02167C64B00FFFD42 /* AddSpendingViewController.swift */; };
 		2D50F0A32167C64B00FFFD42 /* AddSpendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D50F0A12167C64B00FFFD42 /* AddSpendingViewController.xib */; };
 		2D50F0A52168A63900FFFD42 /* Budget+RxDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50F0A42168A63900FFFD42 /* Budget+RxDataSources.swift */; };
+		2D63248B216CF49000C96376 /* MoneyInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D63248A216CF49000C96376 /* MoneyInputTextField.swift */; };
 		3237F88CC8DFEED5F3A307EF /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237FA16B13ED4A2E89245AA /* AppStep.swift */; };
 		3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */; };
 		3237FCC8D611947342E32C72 /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F560C25EBF206D0038F8 /* AccountListViewController.swift */; };
@@ -87,6 +88,7 @@
 		2D50F0A02167C64B00FFFD42 /* AddSpendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendingViewController.swift; sourceTree = "<group>"; };
 		2D50F0A12167C64B00FFFD42 /* AddSpendingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSpendingViewController.xib; sourceTree = "<group>"; };
 		2D50F0A42168A63900FFFD42 /* Budget+RxDataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+RxDataSources.swift"; sourceTree = "<group>"; };
+		2D63248A216CF49000C96376 /* MoneyInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyInputTextField.swift; sourceTree = "<group>"; };
 		3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetFlow.swift; sourceTree = "<group>"; };
 		3237F560C25EBF206D0038F8 /* AccountListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
 		3237FA16B13ED4A2E89245AA /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 				2D50F09E2167C5FD00FFFD42 /* AddSpendingViewModel.swift */,
 			);
 			path = AddSpending;
+			sourceTree = "<group>";
+		};
+		2D632489216CF47900C96376 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D63248A216CF49000C96376 /* MoneyInputTextField.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3237F82C6AE72AEE9FAD14EB /* Scene */ = {
@@ -269,6 +279,7 @@
 		D685937B215F54D800BA4511 /* SimpleBudget */ = {
 			isa = PBXGroup;
 			children = (
+				2D632489216CF47900C96376 /* Views */,
 				D6A39BC4216078FE00D4643F /* Extensions */,
 				D6A39BC1216078A100D4643F /* Protocols */,
 				D6A1FE612160660C00A5F07D /* Flows */,
@@ -491,6 +502,7 @@
 				D6A39BC62160790C00D4643F /* UITableView+Reusable.swift in Sources */,
 				D6A39BC3216078B000D4643F /* Reusable.swift in Sources */,
 				D6A39BCB216079CA00D4643F /* AccountListTableViewCell.swift in Sources */,
+				2D63248B216CF49000C96376 /* MoneyInputTextField.swift in Sources */,
 				D6CCC46A216080A80084BB36 /* Bindable.swift in Sources */,
 				D68103C6216776CA009584E3 /* SpendingListViewController.swift in Sources */,
 				D6A03E8D2166363900F07CAC /* Observable+ActivityIndicator.swift in Sources */,
