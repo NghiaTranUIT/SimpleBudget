@@ -24,7 +24,7 @@ protocol BudgetServiceType {
   func deleteAccount(id: String) -> Observable<Void>
 
   func spending(accountId: String) -> Observable<[Spending]>
-  func addSpending(toAccount accountId: String, note: String, amount: Int) -> Observable<Spending>
+  func addSpending(toAccount accountId: String, note: String, amount: Double) -> Observable<Spending>
   func deleteSpending(id: String) -> Observable<Void>
 }
 
@@ -99,7 +99,7 @@ struct BudgetService: BudgetServiceType {
     return result ?? .empty()
   }
 
-  func addSpending(toAccount accountId: String, note: String, amount: Int) -> Observable<Spending> {
+  func addSpending(toAccount accountId: String, note: String, amount: Double) -> Observable<Spending> {
     let result = withRealm("Adding new spending") { (realm) -> Observable<Spending> in
 
       guard let budget = realm.object(ofType: Account.self, forPrimaryKey: accountId) else {

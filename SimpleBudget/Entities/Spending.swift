@@ -12,7 +12,7 @@ import RealmSwift
 class Spending: Object {
   @objc dynamic var id = UUID().uuidString
   @objc dynamic var note: String = ""
-  @objc dynamic var amount: Int = 0
+  @objc dynamic var amount: Double = 0
   @objc dynamic var date: Date = Date()
   let account = LinkingObjects(fromType: Account.self, property: "spendings")
 

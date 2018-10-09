@@ -30,7 +30,7 @@ class AddSpendingViewModel: Stepper {
   }()
 
   private let canAddNewSpending: Observable<Bool>
-  private let spendingAmount: Observable<Int>
+  private let spendingAmount: Observable<Double>
 
   private let budgetId: String
   private let budgetService: BudgetServiceType
@@ -41,7 +41,7 @@ class AddSpendingViewModel: Stepper {
 
     spendingAmount = spendingAmountString
       .filter { !$0.isEmpty }
-      .map { Int($0) ?? 0 }
+      .map { Double($0) ?? 0 }
 
     canAddNewSpending = Observable
       .combineLatest(spendingNote, spendingAmount)
