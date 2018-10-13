@@ -9,12 +9,6 @@
 import Foundation
 import RxDataSources
 
-extension Account: IdentifiableType {
-  var identity: String {
-    return isInvalidated ? "" : id
-  }
-}
-
 struct SectionOfAccount {
   var header: String
   var items: [Account]

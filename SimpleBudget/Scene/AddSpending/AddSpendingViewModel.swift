@@ -12,20 +12,23 @@ import RxFlow
 import RxSwift
 
 class AddSpendingViewModel: Stepper {
-  let spendingNote = BehaviorSubject<String>(value: "")
-  let spendingAmountString = BehaviorSubject<String>(value: "")
+  // Inputs
+  let spendingNote = BehaviorRelay<String>(value: "")
+  let spendingAmountString = BehaviorRelay<String>(value: "")
+  let selectCategory = BehaviorRelay<Category?>(value: nil)
 
-  lazy var addSpendingAction: CocoaAction = {
-    CocoaAction(enabledIf: canAddNewSpending) { [unowned self] in
-      Observable.combineLatest(self.spendingNote, self.spendingAmount)
-        .take(1)
-        .flatMapLatest {
-          self.budgetService.addSpending(toAccount: self.budgetId, note: $0, amount: $1)
-        }
-        .do(onNext: { _ in
-          self.step.accept(AppStep.addSpendingSuccess)
-        })
-        .map { _ in }
+  // Outputs
+  let selectedCategoryText: Driver<String>
+
+  // Actions
+  lazy var addSpendingAction: CocoaAction = _addSpendingAction()
+
+  lazy var selectCategoryAction: CocoaAction = {
+    CocoaAction { [unowned self] in
+      Observable.deferred {
+        self.step.accept(AppStep.categorySelection)
+        return .just(())
+      }
     }
   }()
 
@@ -49,5 +52,25 @@ class AddSpendingViewModel: Stepper {
         !spendingNote.isEmpty && spendingAmount != 0
       }
       .distinctUntilChanged()
+
+    selectedCategoryText = selectCategory
+      .asObservable()
+      .filterNil()
+      .map { $0.name }
+      .asDriver(onErrorJustReturn: "")
+  }
+
+  private func _addSpendingAction() -> CocoaAction {
+    return CocoaAction(enabledIf: canAddNewSpending) { [unowned self] in
+      Observable.combineLatest(self.spendingNote, self.spendingAmount, self.selectCategory)
+        .take(1)
+        .flatMapLatest {
+          self.budgetService.addSpending(toAccount: self.budgetId, note: $0, amount: $1, category: $2)
+        }
+        .do(onNext: { _ in
+          self.step.accept(AppStep.addSpendingSuccess)
+        })
+        .map { _ in }
+    }
   }
 }

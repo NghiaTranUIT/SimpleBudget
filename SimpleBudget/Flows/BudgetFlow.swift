@@ -37,9 +37,35 @@ class BudgetFlow: Flow {
       return navigateToSpendingList(budgetId: budgetId)
     case let .addSpending(budgetId):
       return navigateToAddSpending(budgetId: budgetId)
+    case .categorySelection:
+      return navigateToCategorySelection()
+    case let .categorySelected(category):
+      return popBackToSpendingList(with: category)
     case .addSpendingSuccess:
       return popViewController()
     }
+  }
+
+  private func popBackToSpendingList(with selectedCategory: Category) -> NextFlowItems {
+    rootViewController.popViewController(animated: true)
+
+    if let addSpendingVc = rootViewController.topViewController as? AddSpendingViewController,
+      let addSpendingViewModel = addSpendingVc.viewModel {
+      addSpendingViewModel.selectCategory.accept(selectedCategory)
+    }
+
+    return .none
+  }
+
+  private func navigateToCategorySelection() -> NextFlowItems {
+    let viewModel = CategorySelectionViewModel(budgetService: services.budgetService)
+
+    var viewController = CategorySelectionViewController()
+    viewController.bindViewModel(to: viewModel)
+
+    rootViewController.pushViewController(viewController, animated: true)
+
+    return .one(flowItem: NextFlowItem(nextPresentable: viewController, nextStepper: viewModel))
   }
 
   private func navigateToBudgetList() -> NextFlowItems {

@@ -19,19 +19,32 @@ enum BudgetServiceError: Error {
 }
 
 protocol BudgetServiceType {
+  // Account
   func accounts() -> Observable<[Account]>
   func createAccount(name: String, currency: String) -> Observable<Account>
   func deleteAccount(id: String) -> Observable<Void>
 
   func spending(accountId: String) -> Observable<[Spending]>
-  func addSpending(toAccount accountId: String, note: String, amount: Int) -> Observable<Spending>
+  func addSpending(toAccount accountId: String, note: String, amount: Int, category: Category?) -> Observable<Spending>
   func deleteSpending(id: String) -> Observable<Void>
+
+  // Category
+  func categories() -> Observable<[Category]>
+
+  // Seed Data
+  func seedDataIfNeeded()
 }
 
 struct BudgetService: BudgetServiceType {
   private let realm: Realm
+  private let userDefaults: UserDefaults
 
-  init(config: Realm.Configuration) throws {
+  private enum UserDefaultsKeys: String {
+    case isInitialDataSeeded
+  }
+
+  init(config: Realm.Configuration, userDefaults: UserDefaults = UserDefaults.standard) throws {
+    self.userDefaults = userDefaults
     realm = try Realm(configuration: config)
   }
 
@@ -99,7 +112,7 @@ struct BudgetService: BudgetServiceType {
     return result ?? .empty()
   }
 
-  func addSpending(toAccount accountId: String, note: String, amount: Int) -> Observable<Spending> {
+  func addSpending(toAccount accountId: String, note: String, amount: Int, category: Category?) -> Observable<Spending> {
     let result = withRealm("Adding new spending") { (realm) -> Observable<Spending> in
 
       guard let budget = realm.object(ofType: Account.self, forPrimaryKey: accountId) else {
@@ -109,6 +122,7 @@ struct BudgetService: BudgetServiceType {
       let spending = Spending()
       spending.note = note
       spending.amount = amount
+      spending.category = category
 
       guard let _ = try? realm.write({
         budget.spendings.append(spending)
@@ -139,5 +153,38 @@ struct BudgetService: BudgetServiceType {
     }
 
     return result ?? .empty()
+  }
+
+  func categories() -> Observable<[Category]> {
+    let result = withRealm("Getting categories list") { (realm) -> Observable<[Category]> in
+      return Observable.array(from: realm.objects(Category.self))
+    }
+
+    return result ?? .empty()
+  }
+
+  func seedDataIfNeeded() {
+    if userDefaults.bool(forKey: UserDefaultsKeys.isInitialDataSeeded.rawValue) {
+      return
+    }
+
+    _ = withRealm("Seeding data", action: { (realm) -> Void in
+      let seedCategories = ["Shopping", "Education", "Food", "Rent", "Misc"].map { name -> Category in
+        let c = Category()
+        c.name = name
+        return c
+      }
+
+      let defaultAccount = Account()
+      defaultAccount.name = "Cash"
+      defaultAccount.currency = "USD"
+
+      try? realm.write {
+        realm.add(defaultAccount)
+        realm.add(seedCategories)
+      }
+
+      userDefaults.set(true, forKey: UserDefaultsKeys.isInitialDataSeeded.rawValue)
+    })
   }
 }

@@ -9,13 +9,8 @@
 import Foundation
 import RealmSwift
 
-class Account: Object {
-  @objc dynamic var id = UUID().uuidString
+final class Account: BaseEntity {
   @objc dynamic var name = ""
   @objc dynamic var currency = ""
   let spendings = List<Spending>()
-
-  override static func primaryKey() -> String? {
-    return "id"
-  }
 }

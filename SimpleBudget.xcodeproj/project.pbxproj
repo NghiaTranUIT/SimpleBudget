@@ -10,7 +10,6 @@
 		2D50F09F2167C5FD00FFFD42 /* AddSpendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50F09E2167C5FD00FFFD42 /* AddSpendingViewModel.swift */; };
 		2D50F0A22167C64B00FFFD42 /* AddSpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50F0A02167C64B00FFFD42 /* AddSpendingViewController.swift */; };
 		2D50F0A32167C64B00FFFD42 /* AddSpendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D50F0A12167C64B00FFFD42 /* AddSpendingViewController.xib */; };
-		2D50F0A52168A63900FFFD42 /* Budget+RxDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50F0A42168A63900FFFD42 /* Budget+RxDataSources.swift */; };
 		3237F88CC8DFEED5F3A307EF /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237FA16B13ED4A2E89245AA /* AppStep.swift */; };
 		3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */; };
 		3237FCC8D611947342E32C72 /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F560C25EBF206D0038F8 /* AccountListViewController.swift */; };
@@ -21,6 +20,13 @@
 		D60D17DC216523AB001964A9 /* RxBlocking.framework in Carthage */ = {isa = PBXBuildFile; fileRef = D60D17D821652347001964A9 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D60D17DD216523AB001964A9 /* Nimble.framework in Carthage */ = {isa = PBXBuildFile; fileRef = D60D17D4216522C4001964A9 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D60D17DE216523AB001964A9 /* Quick.framework in Carthage */ = {isa = PBXBuildFile; fileRef = D60D17D5216522C4001964A9 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D6301B75216F8A2200051102 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6301B74216F8A2200051102 /* BaseEntity.swift */; };
+		D6301B77216F8A5D00051102 /* BaseEntity+RxDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6301B76216F8A5D00051102 /* BaseEntity+RxDataSources.swift */; };
+		D6301B7A216F8C5000051102 /* Spending+RxDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6301B78216F8C5000051102 /* Spending+RxDataSources.swift */; };
+		D6301B7B216F8C5000051102 /* Account+RxDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6301B79216F8C5000051102 /* Account+RxDataSources.swift */; };
+		D6301B7D216F8C8600051102 /* Category+RxDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6301B7C216F8C8600051102 /* Category+RxDataSources.swift */; };
+		D6301B84216F90DA00051102 /* CategorySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6301B82216F90DA00051102 /* CategorySelectionTableViewCell.swift */; };
+		D6301B85216F90DA00051102 /* CategorySelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6301B83216F90DA00051102 /* CategorySelectionTableViewCell.xib */; };
 		D64187A4215F5920009814F1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A0215F5920009814F1 /* RxSwift.framework */; };
 		D64187A5215F5920009814F1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A1215F5920009814F1 /* RxCocoa.framework */; };
 		D64187A6215F5920009814F1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187A2215F5920009814F1 /* Realm.framework */; };
@@ -29,15 +35,19 @@
 		D64187AC215F5DA2009814F1 /* Spending.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64187AB215F5DA2009814F1 /* Spending.swift */; };
 		D64187B4215F6FA7009814F1 /* RxFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187B2215F6FA7009814F1 /* RxFlow.framework */; };
 		D64187B5215F6FA7009814F1 /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64187B3215F6FA7009814F1 /* NSObject_Rx.framework */; };
+		D6655610216E4B0100E9C21D /* CategorySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D665560F216E4B0100E9C21D /* CategorySelectionViewModel.swift */; };
+		D6655613216E4B1D00E9C21D /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6655611216E4B1D00E9C21D /* CategorySelectionViewController.swift */; };
+		D6655614216E4B1D00E9C21D /* CategorySelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6655612216E4B1D00E9C21D /* CategorySelectionViewController.xib */; };
 		D66761182163C51800B07870 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66761162163C51800B07870 /* CreateAccountViewController.swift */; };
 		D66761192163C51800B07870 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66761172163C51800B07870 /* CreateAccountViewController.xib */; };
 		D6681A4F216A451600214D1E /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6681A4E216A451600214D1E /* CreateAccountViewModel.swift */; };
+		D6681A51216A48E300214D1E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6681A50216A48E300214D1E /* Category.swift */; };
+		D676A7DE2171A2350074FAF0 /* Observable+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = D676A7DD2171A2350074FAF0 /* Observable+Optional.swift */; };
 		D68103C32167761F009584E3 /* SpendingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68103C22167761F009584E3 /* SpendingListViewModel.swift */; };
 		D68103C6216776CA009584E3 /* SpendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68103C4216776CA009584E3 /* SpendingListViewController.swift */; };
 		D68103C7216776CA009584E3 /* SpendingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68103C5216776CA009584E3 /* SpendingListViewController.xib */; };
 		D68103CA21677A2E009584E3 /* SpendingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68103C821677A2E009584E3 /* SpendingListTableViewCell.swift */; };
 		D68103CB21677A2E009584E3 /* SpendingListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68103C921677A2E009584E3 /* SpendingListTableViewCell.xib */; };
-		D68103CF21677B83009584E3 /* Spending+RxDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68103CE21677B83009584E3 /* Spending+RxDataSources.swift */; };
 		D685937D215F54D800BA4511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D685937C215F54D800BA4511 /* AppDelegate.swift */; };
 		D6859384215F54D900BA4511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6859383215F54D900BA4511 /* Assets.xcassets */; };
 		D6859387215F54D900BA4511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6859385215F54D900BA4511 /* LaunchScreen.storyboard */; };
@@ -86,7 +96,6 @@
 		2D50F09E2167C5FD00FFFD42 /* AddSpendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendingViewModel.swift; sourceTree = "<group>"; };
 		2D50F0A02167C64B00FFFD42 /* AddSpendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpendingViewController.swift; sourceTree = "<group>"; };
 		2D50F0A12167C64B00FFFD42 /* AddSpendingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSpendingViewController.xib; sourceTree = "<group>"; };
-		2D50F0A42168A63900FFFD42 /* Budget+RxDataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+RxDataSources.swift"; sourceTree = "<group>"; };
 		3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetFlow.swift; sourceTree = "<group>"; };
 		3237F560C25EBF206D0038F8 /* AccountListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
 		3237FA16B13ED4A2E89245AA /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
@@ -94,6 +103,13 @@
 		D60D17D4216522C4001964A9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		D60D17D5216522C4001964A9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		D60D17D821652347001964A9 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		D6301B74216F8A2200051102 /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
+		D6301B76216F8A5D00051102 /* BaseEntity+RxDataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseEntity+RxDataSources.swift"; sourceTree = "<group>"; };
+		D6301B78216F8C5000051102 /* Spending+RxDataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Spending+RxDataSources.swift"; sourceTree = "<group>"; };
+		D6301B79216F8C5000051102 /* Account+RxDataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+RxDataSources.swift"; sourceTree = "<group>"; };
+		D6301B7C216F8C8600051102 /* Category+RxDataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+RxDataSources.swift"; sourceTree = "<group>"; };
+		D6301B82216F90DA00051102 /* CategorySelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionTableViewCell.swift; sourceTree = "<group>"; };
+		D6301B83216F90DA00051102 /* CategorySelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySelectionTableViewCell.xib; sourceTree = "<group>"; };
 		D64187A0215F5920009814F1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		D64187A1215F5920009814F1 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		D64187A2215F5920009814F1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -102,15 +118,19 @@
 		D64187AB215F5DA2009814F1 /* Spending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spending.swift; sourceTree = "<group>"; };
 		D64187B2215F6FA7009814F1 /* RxFlow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxFlow.framework; path = Carthage/Build/iOS/RxFlow.framework; sourceTree = "<group>"; };
 		D64187B3215F6FA7009814F1 /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
+		D665560F216E4B0100E9C21D /* CategorySelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewModel.swift; sourceTree = "<group>"; };
+		D6655611216E4B1D00E9C21D /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
+		D6655612216E4B1D00E9C21D /* CategorySelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorySelectionViewController.xib; sourceTree = "<group>"; };
 		D66761162163C51800B07870 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D66761172163C51800B07870 /* CreateAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
 		D6681A4E216A451600214D1E /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		D6681A50216A48E300214D1E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		D676A7DD2171A2350074FAF0 /* Observable+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Optional.swift"; sourceTree = "<group>"; };
 		D68103C22167761F009584E3 /* SpendingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListViewModel.swift; sourceTree = "<group>"; };
 		D68103C4216776CA009584E3 /* SpendingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListViewController.swift; sourceTree = "<group>"; };
 		D68103C5216776CA009584E3 /* SpendingListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingListViewController.xib; sourceTree = "<group>"; };
 		D68103C821677A2E009584E3 /* SpendingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListTableViewCell.swift; sourceTree = "<group>"; };
 		D68103C921677A2E009584E3 /* SpendingListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingListTableViewCell.xib; sourceTree = "<group>"; };
-		D68103CE21677B83009584E3 /* Spending+RxDataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending+RxDataSources.swift"; sourceTree = "<group>"; };
 		D6859379215F54D800BA4511 /* SimpleBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D685937C215F54D800BA4511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6859383215F54D900BA4511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,6 +196,7 @@
 		3237F82C6AE72AEE9FAD14EB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				D665560E216E4AEE00E9C21D /* CategorySelection */,
 				2D50F09D2167C5C900FFFD42 /* AddSpending */,
 				3237FCB638AABA51B2BC5B3A /* AccountList */,
 				D667610D2163BBED00B07870 /* CreateAccount */,
@@ -187,6 +208,7 @@
 		3237FCB638AABA51B2BC5B3A /* AccountList */ = {
 			isa = PBXGroup;
 			children = (
+				D6301B79216F8C5000051102 /* Account+RxDataSources.swift */,
 				3237F560C25EBF206D0038F8 /* AccountListViewController.swift */,
 				3237FDBCB1291AE8F81304E5 /* AccountListViewModel.swift */,
 				D6A39BC9216079CA00D4643F /* AccountListTableViewCell.swift */,
@@ -217,12 +239,26 @@
 		D64187A8215F59D2009814F1 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				D6681A50216A48E300214D1E /* Category.swift */,
 				D64187A9215F59E3009814F1 /* Account.swift */,
 				D64187AB215F5DA2009814F1 /* Spending.swift */,
-				D68103CE21677B83009584E3 /* Spending+RxDataSources.swift */,
-				2D50F0A42168A63900FFFD42 /* Budget+RxDataSources.swift */,
+				D6301B74216F8A2200051102 /* BaseEntity.swift */,
+				D6301B76216F8A5D00051102 /* BaseEntity+RxDataSources.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		D665560E216E4AEE00E9C21D /* CategorySelection */ = {
+			isa = PBXGroup;
+			children = (
+				D6301B7C216F8C8600051102 /* Category+RxDataSources.swift */,
+				D665560F216E4B0100E9C21D /* CategorySelectionViewModel.swift */,
+				D6655611216E4B1D00E9C21D /* CategorySelectionViewController.swift */,
+				D6655612216E4B1D00E9C21D /* CategorySelectionViewController.xib */,
+				D6301B82216F90DA00051102 /* CategorySelectionTableViewCell.swift */,
+				D6301B83216F90DA00051102 /* CategorySelectionTableViewCell.xib */,
+			);
+			path = CategorySelection;
 			sourceTree = "<group>";
 		};
 		D667610D2163BBED00B07870 /* CreateAccount */ = {
@@ -238,6 +274,7 @@
 		D68103C121677611009584E3 /* SpendingList */ = {
 			isa = PBXGroup;
 			children = (
+				D6301B78216F8C5000051102 /* Spending+RxDataSources.swift */,
 				D68103C22167761F009584E3 /* SpendingListViewModel.swift */,
 				D68103C4216776CA009584E3 /* SpendingListViewController.swift */,
 				D68103C5216776CA009584E3 /* SpendingListViewController.xib */,
@@ -325,6 +362,7 @@
 			children = (
 				D6A39BC52160790C00D4643F /* UITableView+Reusable.swift */,
 				D6A03E8C2166363900F07CAC /* Observable+ActivityIndicator.swift */,
+				D676A7DD2171A2350074FAF0 /* Observable+Optional.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,6 +457,8 @@
 				D6859384215F54D900BA4511 /* Assets.xcassets in Resources */,
 				2D50F0A32167C64B00FFFD42 /* AddSpendingViewController.xib in Resources */,
 				D6A39BCC216079CA00D4643F /* AccountListTableViewCell.xib in Resources */,
+				D6301B85216F90DA00051102 /* CategorySelectionTableViewCell.xib in Resources */,
+				D6655614216E4B1D00E9C21D /* CategorySelectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,8 +518,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D64187AC215F5DA2009814F1 /* Spending.swift in Sources */,
+				D6301B7B216F8C5000051102 /* Account+RxDataSources.swift in Sources */,
+				D6301B77216F8A5D00051102 /* BaseEntity+RxDataSources.swift in Sources */,
 				2D50F09F2167C5FD00FFFD42 /* AddSpendingViewModel.swift in Sources */,
+				D6301B7A216F8C5000051102 /* Spending+RxDataSources.swift in Sources */,
 				D66761182163C51800B07870 /* CreateAccountViewController.swift in Sources */,
+				D6301B84216F90DA00051102 /* CategorySelectionTableViewCell.swift in Sources */,
 				2D50F0A22167C64B00FFFD42 /* AddSpendingViewController.swift in Sources */,
 				D6A1FE632160661700A5F07D /* AppFlow.swift in Sources */,
 				D68103C32167761F009584E3 /* SpendingListViewModel.swift in Sources */,
@@ -488,18 +532,22 @@
 				D64187AA215F59E3009814F1 /* Account.swift in Sources */,
 				D6681A4F216A451600214D1E /* CreateAccountViewModel.swift in Sources */,
 				D6A39BC02160739000D4643F /* BudgetService.swift in Sources */,
+				D6301B75216F8A2200051102 /* BaseEntity.swift in Sources */,
 				D6A39BC62160790C00D4643F /* UITableView+Reusable.swift in Sources */,
+				D676A7DE2171A2350074FAF0 /* Observable+Optional.swift in Sources */,
 				D6A39BC3216078B000D4643F /* Reusable.swift in Sources */,
 				D6A39BCB216079CA00D4643F /* AccountListTableViewCell.swift in Sources */,
 				D6CCC46A216080A80084BB36 /* Bindable.swift in Sources */,
 				D68103C6216776CA009584E3 /* SpendingListViewController.swift in Sources */,
+				D6681A51216A48E300214D1E /* Category.swift in Sources */,
 				D6A03E8D2166363900F07CAC /* Observable+ActivityIndicator.swift in Sources */,
+				D6301B7D216F8C8600051102 /* Category+RxDataSources.swift in Sources */,
 				D685937D215F54D800BA4511 /* AppDelegate.swift in Sources */,
-				D68103CF21677B83009584E3 /* Spending+RxDataSources.swift in Sources */,
-				2D50F0A52168A63900FFFD42 /* Budget+RxDataSources.swift in Sources */,
+				D6655613216E4B1D00E9C21D /* CategorySelectionViewController.swift in Sources */,
 				3237F88CC8DFEED5F3A307EF /* AppStep.swift in Sources */,
 				3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */,
 				3237FCC8D611947342E32C72 /* AccountListViewController.swift in Sources */,
+				D6655610216E4B0100E9C21D /* CategorySelectionViewModel.swift in Sources */,
 				3237FDDDC0AE8C2AD6730100 /* AccountListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

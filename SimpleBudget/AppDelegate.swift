@@ -38,7 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     appFlow = AppFlow(window: window, services: appServices)
 
+    appServices.budgetService.seedDataIfNeeded()
+
     coordinator.coordinate(flow: appFlow, withStepper: OneStepper(withSingleStep: AppStep.accountList))
+
     return true
   }
 }

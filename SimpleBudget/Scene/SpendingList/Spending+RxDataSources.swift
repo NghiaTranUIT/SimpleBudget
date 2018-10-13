@@ -9,12 +9,6 @@
 import Foundation
 import RxDataSources
 
-extension Spending: IdentifiableType {
-  var identity: String {
-    return isInvalidated ? "" : id
-  }
-}
-
 struct SectionOfSpending {
   var header: String
   var items: [Spending]

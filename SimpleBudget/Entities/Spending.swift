@@ -9,14 +9,10 @@
 import Foundation
 import RealmSwift
 
-class Spending: Object {
-  @objc dynamic var id = UUID().uuidString
+final class Spending: BaseEntity {
   @objc dynamic var note: String = ""
   @objc dynamic var amount: Int = 0
   @objc dynamic var date: Date = Date()
+  @objc dynamic var category: Category?
   let account = LinkingObjects(fromType: Account.self, property: "spendings")
-
-  override static func primaryKey() -> String? {
-    return "id"
-  }
 }

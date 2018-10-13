@@ -13,6 +13,7 @@ import UIKit
 
 class SpendingListViewController: UIViewController, Bindable {
   @IBOutlet var tableView: UITableView!
+
   var addSpendingBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
 
   var viewModel: SpendingListViewModel!
