@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/khoi/SimpleBudget/tree/master.svg?style=svg)](https://circleci.com/gh/khoi/SimpleBudget/tree/master)
 
-A minimalist app to track where your 💸 goes.
+A minimalist app to track where your 💸 goes and doesn't sell your data :).
 
 |         | Features  |
 ----------|-----------------
