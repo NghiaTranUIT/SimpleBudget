@@ -7,13 +7,13 @@ import Foundation
 import RxFlow
 
 enum AppStep: Step {
-  case accountList
-  case createAccount
-  case createAccountSuccess
+  case walletList
+  case createWallet
+  case createWalletSuccess
 
-  case spendingList(budgetId: String)
-  case addSpending(budgetId: String)
-  case addSpendingSuccess
+  case transactionList(walletId: String)
+  case addTransaction(walletId: String)
+  case addTransactionSuccess
 
   case categorySelection
   case categorySelected(category: Category)

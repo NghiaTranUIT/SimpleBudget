@@ -27,31 +27,31 @@ class BudgetFlow: Flow {
     guard let step = step as? AppStep else { return .none }
 
     switch step {
-    case .accountList:
-      return navigateToBudgetList()
-    case .createAccount:
+    case .walletList:
+      return navigateToWalletList()
+    case .createWallet:
       return navigateToCreateBudget()
-    case .createAccountSuccess:
+    case .createWalletSuccess:
       return popToRootViewController()
-    case let .spendingList(budgetId):
-      return navigateToSpendingList(budgetId: budgetId)
-    case let .addSpending(budgetId):
-      return navigateToAddSpending(budgetId: budgetId)
+    case let .transactionList(walletId):
+      return navigateToTransactionList(walletId: walletId)
+    case let .addTransaction(walletId):
+      return navigateToAddTransaction(walletId: walletId)
     case .categorySelection:
       return navigateToCategorySelection()
     case let .categorySelected(category):
-      return popBackToSpendingList(with: category)
-    case .addSpendingSuccess:
+      return popBackToTransactionList(with: category)
+    case .addTransactionSuccess:
       return popViewController()
     }
   }
 
-  private func popBackToSpendingList(with selectedCategory: Category) -> NextFlowItems {
+  private func popBackToTransactionList(with selectedCategory: Category) -> NextFlowItems {
     rootViewController.popViewController(animated: true)
 
-    if let addSpendingVc = rootViewController.topViewController as? AddSpendingViewController,
-      let addSpendingViewModel = addSpendingVc.viewModel {
-      addSpendingViewModel.selectCategory.accept(selectedCategory)
+    if let addTransactionVc = rootViewController.topViewController as? AddTransactionViewController,
+      let addTransactionViewModel = addTransactionVc.viewModel {
+      addTransactionViewModel.selectCategory.accept(selectedCategory)
     }
 
     return .none
@@ -68,11 +68,11 @@ class BudgetFlow: Flow {
     return .one(flowItem: NextFlowItem(nextPresentable: viewController, nextStepper: viewModel))
   }
 
-  private func navigateToBudgetList() -> NextFlowItems {
-    let viewModel = AccountListViewModel(budgetService: services.budgetService)
+  private func navigateToWalletList() -> NextFlowItems {
+    let viewModel = WalletListViewModel(budgetService: services.budgetService)
 
-    var viewController = AccountListViewController()
-    viewController.title = "Account List"
+    var viewController = WalletListViewController()
+    viewController.title = "Wallet List"
     viewController.bindViewModel(to: viewModel)
 
     rootViewController.pushViewController(viewController, animated: true)
@@ -81,21 +81,21 @@ class BudgetFlow: Flow {
   }
 
   private func navigateToCreateBudget() -> NextFlowItems {
-    let viewModel = CreateAccountViewModel(budgetService: services.budgetService)
+    let viewModel = CreateWalletViewModel(budgetService: services.budgetService)
 
-    var viewController = CreateAccountViewController()
-    viewController.title = "Create Account"
+    var viewController = CreateWalletViewController()
+    viewController.title = "Create Wallet"
     viewController.bindViewModel(to: viewModel)
 
     rootViewController.pushViewController(viewController, animated: true)
     return .one(flowItem: NextFlowItem(nextPresentable: viewController, nextStepper: viewModel))
   }
 
-  private func navigateToSpendingList(budgetId: String) -> NextFlowItems {
-    let viewModel = SpendingListViewModel(budgetService: services.budgetService, budgetId: budgetId)
+  private func navigateToTransactionList(walletId: String) -> NextFlowItems {
+    let viewModel = TransactionListViewModel(budgetService: services.budgetService, walletId: walletId)
 
-    var viewController = SpendingListViewController()
-    viewController.title = "Spending List"
+    var viewController = TransactionListViewController()
+    viewController.title = "Transaction List"
     viewController.bindViewModel(to: viewModel)
 
     rootViewController.pushViewController(viewController, animated: true)
@@ -107,15 +107,15 @@ class BudgetFlow: Flow {
     return .none
   }
 
-  private func navigateToAddSpending(budgetId: String) -> NextFlowItems {
-    let addSpendingViewModel = AddSpendingViewModel(budgetService: services.budgetService, budgetId: budgetId)
+  private func navigateToAddTransaction(walletId: String) -> NextFlowItems {
+    let addTransactionViewModel = AddTransactionViewModel(budgetService: services.budgetService, walletId: walletId)
 
-    var addSpendingVC = AddSpendingViewController()
-    addSpendingVC.title = "Add Spending"
-    addSpendingVC.bindViewModel(to: addSpendingViewModel)
+    var addTransactionVC = AddTransactionViewController()
+    addTransactionVC.title = "Add Transaction"
+    addTransactionVC.bindViewModel(to: addTransactionViewModel)
 
-    rootViewController.pushViewController(addSpendingVC, animated: true)
-    return .one(flowItem: NextFlowItem(nextPresentable: addSpendingVC, nextStepper: addSpendingViewModel))
+    rootViewController.pushViewController(addTransactionVC, animated: true)
+    return .one(flowItem: NextFlowItem(nextPresentable: addTransactionVC, nextStepper: addTransactionViewModel))
   }
 
   private func popViewController() -> NextFlowItems {

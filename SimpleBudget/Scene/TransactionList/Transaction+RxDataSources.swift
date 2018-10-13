@@ -1,5 +1,5 @@
 //
-//  Spending+RxDataSources.swift
+//  Transaction+RxDataSources.swift
 //  SimpleBudget
 //
 //  Created by khoi on 10/5/18.
@@ -9,17 +9,17 @@
 import Foundation
 import RxDataSources
 
-struct SectionOfSpending {
+struct SectionOfTransaction {
   var header: String
-  var items: [Spending]
+  var items: [Transaction]
 }
 
-extension SectionOfSpending: AnimatableSectionModelType {
+extension SectionOfTransaction: AnimatableSectionModelType {
   var identity: String {
     return header
   }
 
-  init(original: SectionOfSpending, items: [Spending]) {
+  init(original: SectionOfTransaction, items: [Transaction]) {
     self = original
     self.items = items
   }

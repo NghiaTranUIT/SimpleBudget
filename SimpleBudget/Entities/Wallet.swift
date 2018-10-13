@@ -9,8 +9,8 @@
 import Foundation
 import RealmSwift
 
-final class Account: BaseEntity {
+final class Wallet: BaseEntity {
   @objc dynamic var name = ""
   @objc dynamic var currency = ""
-  let spendings = List<Spending>()
+  let transactions = List<Transaction>()
 }

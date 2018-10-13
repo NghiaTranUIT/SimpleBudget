@@ -9,20 +9,20 @@ import RxDataSources
 import RxSwift
 import UIKit
 
-class AccountListViewController: UIViewController, Bindable {
-  var viewModel: AccountListViewModel!
+class WalletListViewController: UIViewController, Bindable {
+  var viewModel: WalletListViewModel!
 
   lazy var tableView: UITableView = {
     let tv = UITableView(frame: .zero)
-    tv.register(AccountListTableViewCell.self)
+    tv.register(WalletListTableViewCell.self)
     return tv
   }()
 
   var addBudgetBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
 
-  lazy var dataSources: RxTableViewSectionedAnimatedDataSource<SectionOfAccount> = {
-    let dataSources = RxTableViewSectionedAnimatedDataSource<SectionOfAccount>(configureCell: { (_, tableView, indexPath, budget) -> UITableViewCell in
-      let cell = tableView.dequeueReusableCell(for: indexPath, cellClass: AccountListTableViewCell.self)
+  lazy var dataSources: RxTableViewSectionedAnimatedDataSource<SectionOfWallet> = {
+    let dataSources = RxTableViewSectionedAnimatedDataSource<SectionOfWallet>(configureCell: { (_, tableView, indexPath, budget) -> UITableViewCell in
+      let cell = tableView.dequeueReusableCell(for: indexPath, cellClass: WalletListTableViewCell.self)
       cell.nameLabel.text = budget.name
       return cell
     })
@@ -51,22 +51,22 @@ class AccountListViewController: UIViewController, Bindable {
 
   func setupBinding() {
     viewModel
-      .accounts
-      .map { [SectionOfAccount(header: "Budget", items: $0)] }
+      .wallets
+      .map { [SectionOfWallet(header: "Budget", items: $0)] }
       .bind(to: tableView.rx.items(dataSource: dataSources))
       .disposed(by: rx.disposeBag)
 
     tableView.rx
-      .modelDeleted(Account.self)
-      .bind(to: viewModel.removeAccount)
+      .modelDeleted(Wallet.self)
+      .bind(to: viewModel.removeWallet)
       .disposed(by: rx.disposeBag)
 
     tableView.rx
-      .modelSelected(Account.self)
-      .do(onNext: viewModel.navigateToSpendingList)
+      .modelSelected(Wallet.self)
+      .do(onNext: viewModel.navigateToTransactionList)
       .subscribe()
       .disposed(by: rx.disposeBag)
 
-    addBudgetBarButtonItem.rx.action = viewModel.navigateToCreateBudgetAction
+    addBudgetBarButtonItem.rx.action = viewModel.navigateToCreateWalletAction
   }
 }

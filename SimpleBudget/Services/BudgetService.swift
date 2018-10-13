@@ -14,19 +14,19 @@ import RxSwift
 enum BudgetServiceError: Error {
   case creationFailed
   case deletionFailed
-  case addSpendingFailed
-  case deleteSpendingFailed
+  case addTransactionFailed
+  case deleteTransactionFailed
 }
 
 protocol BudgetServiceType {
-  // Account
-  func accounts() -> Observable<[Account]>
-  func createAccount(name: String, currency: String) -> Observable<Account>
-  func deleteAccount(id: String) -> Observable<Void>
+  // Wallet
+  func wallets() -> Observable<[Wallet]>
+  func createWallet(name: String, currency: String) -> Observable<Wallet>
+  func deleteWallet(id: String) -> Observable<Void>
 
-  func spending(accountId: String) -> Observable<[Spending]>
-  func addSpending(toAccount accountId: String, note: String, amount: Int, category: Category?) -> Observable<Spending>
-  func deleteSpending(id: String) -> Observable<Void>
+  func transactions(walletId: String) -> Observable<[Transaction]>
+  func addTransaction(toWallet walletId: String, note: String, amount: Int, category: Category?) -> Observable<Transaction>
+  func deleteTransaction(id: String) -> Observable<Void>
 
   // Category
   func categories() -> Observable<[Category]>
@@ -57,40 +57,40 @@ struct BudgetService: BudgetServiceType {
     }
   }
 
-  func accounts() -> Observable<[Account]> {
-    let result = withRealm("Getting account list") { (realm) -> Observable<[Account]> in
-      return Observable.array(from: realm.objects(Account.self))
+  func wallets() -> Observable<[Wallet]> {
+    let result = withRealm("Getting wallet list") { (realm) -> Observable<[Wallet]> in
+      return Observable.array(from: realm.objects(Wallet.self))
     }
 
     return result ?? .empty()
   }
 
-  func createAccount(name: String, currency: String) -> Observable<Account> {
-    let result = withRealm("Creating new account") { (realm) -> Observable<Account> in
-      let account = Account()
-      account.name = name
-      account.currency = currency
+  func createWallet(name: String, currency: String) -> Observable<Wallet> {
+    let result = withRealm("Creating new wallet") { (realm) -> Observable<Wallet> in
+      let wallet = Wallet()
+      wallet.name = name
+      wallet.currency = currency
 
-      guard let _ = try? realm.write({ realm.add(account) }) else {
+      guard let _ = try? realm.write({ realm.add(wallet) }) else {
         return Observable.error(BudgetServiceError.creationFailed)
       }
 
-      return Observable.just(account)
+      return Observable.just(wallet)
     }
 
     return result ?? .empty()
   }
 
-  func deleteAccount(id: String) -> Observable<Void> {
-    let result = withRealm("Deleting account \(id)") { (realm) -> Observable<Void> in
+  func deleteWallet(id: String) -> Observable<Void> {
+    let result = withRealm("Deleting wallet \(id)") { (realm) -> Observable<Void> in
 
-      guard let accountToDelete = realm.object(ofType: Account.self, forPrimaryKey: id) else {
+      guard let walletToDelete = realm.object(ofType: Wallet.self, forPrimaryKey: id) else {
         return .just(())
       }
 
       guard let _ = try? realm.write({
-        realm.delete(accountToDelete.spendings)
-        realm.delete(accountToDelete)
+        realm.delete(walletToDelete.transactions)
+        realm.delete(walletToDelete)
       }) else {
         return Observable.error(BudgetServiceError.deletionFailed)
       }
@@ -101,52 +101,52 @@ struct BudgetService: BudgetServiceType {
     return result ?? .empty()
   }
 
-  func spending(accountId: String) -> Observable<[Spending]> {
-    let result = withRealm("Getting spendings for account Id \(accountId)") { (realm) -> Observable<[Spending]> in
-      guard let budget = realm.object(ofType: Account.self, forPrimaryKey: accountId) else {
+  func transactions(walletId: String) -> Observable<[Transaction]> {
+    let result = withRealm("Getting transactions for wallet Id \(walletId)") { (realm) -> Observable<[Transaction]> in
+      guard let wallet = realm.object(ofType: Wallet.self, forPrimaryKey: walletId) else {
         return .just([])
       }
-      return Observable.array(from: budget.spendings)
+      return Observable.array(from: wallet.transactions)
     }
 
     return result ?? .empty()
   }
 
-  func addSpending(toAccount accountId: String, note: String, amount: Int, category: Category?) -> Observable<Spending> {
-    let result = withRealm("Adding new spending") { (realm) -> Observable<Spending> in
+  func addTransaction(toWallet walletId: String, note: String, amount: Int, category: Category?) -> Observable<Transaction> {
+    let result = withRealm("Adding new transaction") { (realm) -> Observable<Transaction> in
 
-      guard let budget = realm.object(ofType: Account.self, forPrimaryKey: accountId) else {
-        return Observable.error(BudgetServiceError.addSpendingFailed)
+      guard let wallet = realm.object(ofType: Wallet.self, forPrimaryKey: walletId) else {
+        return Observable.error(BudgetServiceError.addTransactionFailed)
       }
 
-      let spending = Spending()
-      spending.note = note
-      spending.amount = amount
-      spending.category = category
+      let trans = Transaction()
+      trans.note = note
+      trans.amount = amount
+      trans.category = category
 
       guard let _ = try? realm.write({
-        budget.spendings.append(spending)
+        wallet.transactions.append(trans)
       }) else {
-        return Observable.error(BudgetServiceError.addSpendingFailed)
+        return Observable.error(BudgetServiceError.addTransactionFailed)
       }
 
-      return Observable.just(spending)
+      return Observable.just(trans)
     }
 
     return result ?? .empty()
   }
 
-  func deleteSpending(id: String) -> Observable<Void> {
-    let result = withRealm("Delete a spending id \(id)") { (realm) -> Observable<Void> in
+  func deleteTransaction(id: String) -> Observable<Void> {
+    let result = withRealm("Delete a transaction id \(id)") { (realm) -> Observable<Void> in
 
-      guard let accountToDelete = realm.object(ofType: Spending.self, forPrimaryKey: id) else {
+      guard let walletToDelete = realm.object(ofType: Transaction.self, forPrimaryKey: id) else {
         return .just(())
       }
 
       guard let _ = try? realm.write({
-        realm.delete(accountToDelete)
+        realm.delete(walletToDelete)
       }) else {
-        return Observable.error(BudgetServiceError.deleteSpendingFailed)
+        return Observable.error(BudgetServiceError.deleteTransactionFailed)
       }
 
       return .just(())
@@ -175,12 +175,12 @@ struct BudgetService: BudgetServiceType {
         return c
       }
 
-      let defaultAccount = Account()
-      defaultAccount.name = "Cash"
-      defaultAccount.currency = "USD"
+      let defaultWallet = Wallet()
+      defaultWallet.name = "Cash"
+      defaultWallet.currency = "USD"
 
       try? realm.write {
-        realm.add(defaultAccount)
+        realm.add(defaultWallet)
         realm.add(seedCategories)
       }
 

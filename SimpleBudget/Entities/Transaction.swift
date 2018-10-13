@@ -1,5 +1,5 @@
 //
-//  Spending.swift
+//  Transaction.swift
 //  SimpleBudget
 //
 //  Created by khoi on 9/29/18.
@@ -9,10 +9,10 @@
 import Foundation
 import RealmSwift
 
-final class Spending: BaseEntity {
+final class Transaction: BaseEntity {
   @objc dynamic var note: String = ""
   @objc dynamic var amount: Int = 0
   @objc dynamic var date: Date = Date()
   @objc dynamic var category: Category?
-  let account = LinkingObjects(fromType: Account.self, property: "spendings")
+  let wallet = LinkingObjects(fromType: Wallet.self, property: "transactions")
 }

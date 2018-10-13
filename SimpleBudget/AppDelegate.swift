@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     appServices.budgetService.seedDataIfNeeded()
 
-    coordinator.coordinate(flow: appFlow, withStepper: OneStepper(withSingleStep: AppStep.accountList))
+    coordinator.coordinate(flow: appFlow, withStepper: OneStepper(withSingleStep: AppStep.walletList))
 
     return true
   }

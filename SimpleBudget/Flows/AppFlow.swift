@@ -33,20 +33,20 @@ class AppFlow: Flow {
     }
 
     switch step {
-    case .accountList:
-      return navigateToBudgetList()
+    case .walletList:
+      return navigateToWalletList()
     default:
       return .none
     }
   }
 
-  private func navigateToBudgetList() -> NextFlowItems {
+  private func navigateToWalletList() -> NextFlowItems {
     let budgetFlow = BudgetFlow(services: services)
 
     Flows.whenReady(flow1: budgetFlow) { [unowned self] root in
       self.window.rootViewController = root
     }
 
-    return .one(flowItem: NextFlowItem(nextPresentable: budgetFlow, nextStepper: OneStepper(withSingleStep: AppStep.accountList)))
+    return .one(flowItem: NextFlowItem(nextPresentable: budgetFlow, nextStepper: OneStepper(withSingleStep: AppStep.walletList)))
   }
 }

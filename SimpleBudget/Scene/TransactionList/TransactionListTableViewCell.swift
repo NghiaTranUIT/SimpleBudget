@@ -1,5 +1,5 @@
 //
-//  SpendingListTableViewCell.swift
+//  TransactionListTableViewCell.swift
 //  SimpleBudget
 //
 //  Created by khoi on 10/5/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SpendingListTableViewCell: UITableViewCell, NibLoadableView {
+class TransactionListTableViewCell: UITableViewCell, NibLoadableView {
   @IBOutlet var noteLabel: UILabel!
   @IBOutlet var amountLabel: UILabel!
 

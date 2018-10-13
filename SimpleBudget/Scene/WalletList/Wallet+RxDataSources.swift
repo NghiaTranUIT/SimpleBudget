@@ -9,17 +9,17 @@
 import Foundation
 import RxDataSources
 
-struct SectionOfAccount {
+struct SectionOfWallet {
   var header: String
-  var items: [Account]
+  var items: [Wallet]
 }
 
-extension SectionOfAccount: AnimatableSectionModelType {
+extension SectionOfWallet: AnimatableSectionModelType {
   var identity: String {
     return header
   }
 
-  init(original: SectionOfAccount, items: [Account]) {
+  init(original: SectionOfWallet, items: [Wallet]) {
     self = original
     self.items = items
   }
