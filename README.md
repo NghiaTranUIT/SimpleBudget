@@ -2,11 +2,12 @@
 
 [![CircleCI](https://circleci.com/gh/khoi/SimpleBudget/tree/master.svg?style=svg)](https://circleci.com/gh/khoi/SimpleBudget/tree/master)
 
-A minimalist app to track where your 💸 goes and doesn't sell your data :).
+A minimalist app to track where your 💸 goes.
 
 |         | Features  |
 ----------|-----------------
-🔐 | All data is stored locally. No ☁️ involved.
+🔐 | All data is stored locally. 
+🙅‍♂️| No tracking whatsoever.
 :octocat: | Open source development.
 
 ## Getting started
