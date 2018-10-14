@@ -19,10 +19,10 @@ class WalletListViewModel: Stepper {
     }
   }()
 
-  private let budgetService: BudgetServiceType
+  private let budgetService: PersistenceServiceType
   private let disposeBag = DisposeBag()
 
-  init(budgetService: BudgetServiceType) {
+  init(budgetService: PersistenceServiceType) {
     self.budgetService = budgetService
 
     wallets = budgetService.wallets()

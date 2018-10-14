@@ -17,10 +17,10 @@ final class CategorySelectionViewModel: Stepper {
 
   let categorySelected = PublishRelay<Category>()
 
-  private let budgetService: BudgetServiceType
+  private let budgetService: PersistenceServiceType
   private let disposeBag = DisposeBag()
 
-  init(budgetService: BudgetServiceType) {
+  init(budgetService: PersistenceServiceType) {
     self.budgetService = budgetService
 
     categories = budgetService.categories().map { [SectionOfCategory(header: "Categories", items: $0)] }

@@ -23,11 +23,11 @@ class TransactionListViewModel: Stepper {
     }
   }()
 
-  private let budgetService: BudgetServiceType
+  private let budgetService: PersistenceServiceType
   private let walletId: String
   private let disposeBag = DisposeBag()
 
-  init(budgetService: BudgetServiceType, walletId: String) {
+  init(budgetService: PersistenceServiceType, walletId: String) {
     self.budgetService = budgetService
     self.walletId = walletId
 

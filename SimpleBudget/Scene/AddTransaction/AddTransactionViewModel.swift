@@ -36,9 +36,9 @@ class AddTransactionViewModel: Stepper {
   private let transactionAmount: Observable<Int>
 
   private let walletId: String
-  private let budgetService: BudgetServiceType
+  private let budgetService: PersistenceServiceType
 
-  init(budgetService: BudgetServiceType, walletId: String) {
+  init(budgetService: PersistenceServiceType, walletId: String) {
     self.budgetService = budgetService
     self.walletId = walletId
 

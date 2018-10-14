@@ -1,5 +1,5 @@
 //
-//  BudgetService.swift
+//  PersistenceService.swift
 //  SimpleBudget
 //
 //  Created by khoi on 9/30/18.
@@ -11,19 +11,20 @@ import RealmSwift
 import RxRealm
 import RxSwift
 
-enum BudgetServiceError: Error {
+enum PersistenceServiceError: Error {
   case creationFailed
   case deletionFailed
   case addTransactionFailed
   case deleteTransactionFailed
 }
 
-protocol BudgetServiceType {
+protocol PersistenceServiceType {
   // Wallet
   func wallets() -> Observable<[Wallet]>
   func createWallet(name: String, currency: String) -> Observable<Wallet>
   func deleteWallet(id: String) -> Observable<Void>
 
+  // Transactions
   func transactions(walletId: String) -> Observable<[Transaction]>
   func addTransaction(toWallet walletId: String, note: String, amount: Int, category: Category?) -> Observable<Transaction>
   func deleteTransaction(id: String) -> Observable<Void>
@@ -35,7 +36,7 @@ protocol BudgetServiceType {
   func seedDataIfNeeded()
 }
 
-struct BudgetService: BudgetServiceType {
+struct PersistenceService: PersistenceServiceType {
   private let realm: Realm
   private let userDefaults: UserDefaults
 
@@ -72,7 +73,7 @@ struct BudgetService: BudgetServiceType {
       wallet.currency = currency
 
       guard let _ = try? realm.write({ realm.add(wallet) }) else {
-        return Observable.error(BudgetServiceError.creationFailed)
+        return Observable.error(PersistenceServiceError.creationFailed)
       }
 
       return Observable.just(wallet)
@@ -92,7 +93,7 @@ struct BudgetService: BudgetServiceType {
         realm.delete(walletToDelete.transactions)
         realm.delete(walletToDelete)
       }) else {
-        return Observable.error(BudgetServiceError.deletionFailed)
+        return Observable.error(PersistenceServiceError.deletionFailed)
       }
 
       return .just(())
@@ -116,7 +117,7 @@ struct BudgetService: BudgetServiceType {
     let result = withRealm("Adding new transaction") { (realm) -> Observable<Transaction> in
 
       guard let wallet = realm.object(ofType: Wallet.self, forPrimaryKey: walletId) else {
-        return Observable.error(BudgetServiceError.addTransactionFailed)
+        return Observable.error(PersistenceServiceError.addTransactionFailed)
       }
 
       let trans = Transaction()
@@ -127,7 +128,7 @@ struct BudgetService: BudgetServiceType {
       guard let _ = try? realm.write({
         wallet.transactions.append(trans)
       }) else {
-        return Observable.error(BudgetServiceError.addTransactionFailed)
+        return Observable.error(PersistenceServiceError.addTransactionFailed)
       }
 
       return Observable.just(trans)
@@ -146,7 +147,7 @@ struct BudgetService: BudgetServiceType {
       guard let _ = try? realm.write({
         realm.delete(walletToDelete)
       }) else {
-        return Observable.error(BudgetServiceError.deleteTransactionFailed)
+        return Observable.error(PersistenceServiceError.deleteTransactionFailed)
       }
 
       return .just(())

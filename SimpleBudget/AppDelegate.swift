@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   let disposeBag = DisposeBag()
 
-  let budgetService = try! BudgetService(config: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
+  let budgetService = try! PersistenceService(config: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
 
   lazy var appServices = {
     AppServices(budgetService: budgetService)
@@ -47,5 +47,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 struct AppServices {
-  let budgetService: BudgetServiceType
+  let budgetService: PersistenceServiceType
 }

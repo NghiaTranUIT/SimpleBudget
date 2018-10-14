@@ -33,9 +33,9 @@ class CreateWalletViewModel: Stepper {
 
   private var createEnabled: Observable<Bool>
 
-  private let budgetService: BudgetServiceType
+  private let budgetService: PersistenceServiceType
 
-  init(budgetService: BudgetServiceType) {
+  init(budgetService: PersistenceServiceType) {
     self.budgetService = budgetService
 
     createEnabled = Observable

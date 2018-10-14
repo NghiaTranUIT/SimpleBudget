@@ -55,7 +55,7 @@
 		D6A03E8D2166363900F07CAC /* Observable+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A03E8C2166363900F07CAC /* Observable+ActivityIndicator.swift */; };
 		D6A1FE632160661700A5F07D /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A1FE622160661700A5F07D /* AppFlow.swift */; };
 		D6A39BBE216070C600D4643F /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A39BBD216070C600D4643F /* Action.framework */; };
-		D6A39BC02160739000D4643F /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A39BBF2160739000D4643F /* BudgetService.swift */; };
+		D6A39BC02160739000D4643F /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A39BBF2160739000D4643F /* PersistenceService.swift */; };
 		D6A39BC3216078B000D4643F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A39BC2216078B000D4643F /* Reusable.swift */; };
 		D6A39BC62160790C00D4643F /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A39BC52160790C00D4643F /* UITableView+Reusable.swift */; };
 		D6A39BCB216079CA00D4643F /* WalletListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A39BC9216079CA00D4643F /* WalletListTableViewCell.swift */; };
@@ -142,7 +142,7 @@
 		D6A03E8C2166363900F07CAC /* Observable+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		D6A1FE622160661700A5F07D /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		D6A39BBD216070C600D4643F /* Action.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Action.framework; path = Carthage/Build/iOS/Action.framework; sourceTree = "<group>"; };
-		D6A39BBF2160739000D4643F /* BudgetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetService.swift; sourceTree = "<group>"; };
+		D6A39BBF2160739000D4643F /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		D6A39BC2216078B000D4643F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D6A39BC52160790C00D4643F /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		D6A39BC9216079CA00D4643F /* WalletListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListTableViewCell.swift; sourceTree = "<group>"; };
@@ -332,7 +332,7 @@
 		D6A1FE602160653400A5F07D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D6A39BBF2160739000D4643F /* BudgetService.swift */,
+				D6A39BBF2160739000D4643F /* PersistenceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -531,7 +531,7 @@
 				D6CCC46C216086150084BB36 /* NibLoadableView.swift in Sources */,
 				D64187AA215F59E3009814F1 /* Wallet.swift in Sources */,
 				D6681A4F216A451600214D1E /* CreateWalletViewModel.swift in Sources */,
-				D6A39BC02160739000D4643F /* BudgetService.swift in Sources */,
+				D6A39BC02160739000D4643F /* PersistenceService.swift in Sources */,
 				D6301B75216F8A2200051102 /* BaseEntity.swift in Sources */,
 				D6A39BC62160790C00D4643F /* UITableView+Reusable.swift in Sources */,
 				D676A7DE2171A2350074FAF0 /* Observable+Optional.swift in Sources */,
