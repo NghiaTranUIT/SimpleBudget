@@ -8,12 +8,13 @@
 
 import Action
 import Foundation
+import RxCocoa
 import RxFlow
 import RxSwift
 
 class AddCategoryViewModel: Stepper {
 
-  let categoryName = BehaviorSubject<String>(value: "")
+  let categoryName = BehaviorRelay<String>(value: "")
   
   private let budgetService: PersistenceServiceType
   private var createEnabled: Observable<Bool>
