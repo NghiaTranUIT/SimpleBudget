@@ -21,6 +21,7 @@ class AddCategoryViewModel: Stepper {
   lazy var categoryAddedAction: CocoaAction = {
     CocoaAction(enabledIf: createEnabled) { [unowned self] in
       self.categoryName
+        .take(1)
         .flatMap { self.budgetService.addCategory(name: $0) }
         .do(onNext: { _ in self.step.accept(AppStep.addCategorySuccess) })
         .map { _ in }
