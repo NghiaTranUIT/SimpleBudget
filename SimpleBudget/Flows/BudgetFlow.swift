@@ -41,8 +41,10 @@ class BudgetFlow: Flow {
       return navigateToCategorySelection()
     case let .categorySelected(category):
       return popBackToTransactionList(with: category)
-    case .addTransactionSuccess:
+    case .addTransactionSuccess, .addCategorySuccess:
       return popViewController()
+    case .addCategory:
+      return navigateToAddCategory()
     }
   }
 
@@ -121,5 +123,15 @@ class BudgetFlow: Flow {
   private func popViewController() -> NextFlowItems {
     rootViewController.popViewController(animated: true)
     return .none
+  }
+  
+  private func navigateToAddCategory() -> NextFlowItems {
+    let viewModel = AddCategoryViewModel(budgetService: services.budgetService)
+    var viewController = AddCategoryViewController()
+    viewController.title = "Add Category"
+    viewController.bindViewModel(to: viewModel)
+    
+    rootViewController.pushViewController(viewController, animated: true)
+    return .one(flowItem: NextFlowItem(nextPresentable: viewController, nextStepper: viewModel))
   }
 }

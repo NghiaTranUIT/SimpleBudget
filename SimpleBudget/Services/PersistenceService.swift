@@ -16,6 +16,7 @@ enum PersistenceServiceError: Error {
   case deletionFailed
   case addTransactionFailed
   case deleteTransactionFailed
+  case addCategoryFailed
 }
 
 protocol PersistenceServiceType {
@@ -31,12 +32,14 @@ protocol PersistenceServiceType {
 
   // Category
   func categories() -> Observable<[Category]>
+  func addCategory(name: String) -> Observable<Category>
 
   // Seed Data
   func seedDataIfNeeded()
 }
 
 struct PersistenceService: PersistenceServiceType {
+  
   private let realm: Realm
   private let userDefaults: UserDefaults
 
@@ -161,6 +164,24 @@ struct PersistenceService: PersistenceServiceType {
       return Observable.array(from: realm.objects(Category.self))
     }
 
+    return result ?? .empty()
+  }
+  
+  func addCategory(name: String) -> Observable<Category> {
+    let result = withRealm("Add category with name \(name)") { realm -> Observable<Category> in
+      
+      let category = Category()
+      category.name = name
+      
+      guard let _ = try? realm.write({
+        realm.add(category)
+      }) else {
+        return Observable.error(PersistenceServiceError.addCategoryFailed)
+      }
+      
+      return .just(category)
+    }
+    
     return result ?? .empty()
   }
 

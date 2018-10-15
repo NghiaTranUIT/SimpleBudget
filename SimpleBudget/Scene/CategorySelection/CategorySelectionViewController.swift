@@ -14,9 +14,10 @@ import UIKit
 
 final class CategorySelectionViewController: UIViewController, Bindable {
   @IBOutlet var tableView: UITableView!
-
+  
+  private var addBarButtonItem: UIBarButtonItem!
   var viewModel: CategorySelectionViewModel!
-
+  
   lazy var dataSources: RxTableViewSectionedAnimatedDataSource<SectionOfCategory> = {
     RxTableViewSectionedAnimatedDataSource<SectionOfCategory>.init(configureCell: { (_, tableView, indexPath, category) -> UITableViewCell in
       let cell = tableView.dequeueReusableCell(for: indexPath, cellClass: CategorySelectionTableViewCell.self)
@@ -32,6 +33,9 @@ final class CategorySelectionViewController: UIViewController, Bindable {
 
     navigationItem.title = "Select category"
     navigationItem.hidesBackButton = true
+    
+    addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+    navigationItem.rightBarButtonItem = addBarButtonItem
   }
 
   func setupBinding() {
@@ -44,5 +48,7 @@ final class CategorySelectionViewController: UIViewController, Bindable {
       .modelSelected(Category.self)
       .bind(to: viewModel.categorySelected)
       .disposed(by: rx.disposeBag)
+    
+    addBarButtonItem.rx.action = viewModel.navigateToAddCategoryAction
   }
 }

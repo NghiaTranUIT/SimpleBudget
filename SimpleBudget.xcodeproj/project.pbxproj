@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CCEE911217448AD00B7C054 /* AddCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCEE910217448AD00B7C054 /* AddCategoryViewModel.swift */; };
+		2CCEE913217448BC00B7C054 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCEE912217448BB00B7C054 /* AddCategoryViewController.swift */; };
+		2CCEE915217448D100B7C054 /* AddCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCEE914217448D100B7C054 /* AddCategoryViewController.xib */; };
 		2D50F09F2167C5FD00FFFD42 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50F09E2167C5FD00FFFD42 /* AddTransactionViewModel.swift */; };
 		2D50F0A22167C64B00FFFD42 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50F0A02167C64B00FFFD42 /* AddTransactionViewController.swift */; };
 		2D50F0A32167C64B00FFFD42 /* AddTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D50F0A12167C64B00FFFD42 /* AddTransactionViewController.xib */; };
@@ -93,6 +96,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2CCEE910217448AD00B7C054 /* AddCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewModel.swift; sourceTree = "<group>"; };
+		2CCEE912217448BB00B7C054 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		2CCEE914217448D100B7C054 /* AddCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryViewController.xib; sourceTree = "<group>"; };
 		2D50F09E2167C5FD00FFFD42 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
 		2D50F0A02167C64B00FFFD42 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		2D50F0A12167C64B00FFFD42 /* AddTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTransactionViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +189,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CCEE90F2174489700B7C054 /* AddCategory */ = {
+			isa = PBXGroup;
+			children = (
+				2CCEE910217448AD00B7C054 /* AddCategoryViewModel.swift */,
+				2CCEE912217448BB00B7C054 /* AddCategoryViewController.swift */,
+				2CCEE914217448D100B7C054 /* AddCategoryViewController.xib */,
+			);
+			path = AddCategory;
+			sourceTree = "<group>";
+		};
 		2D50F09D2167C5C900FFFD42 /* AddTransaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +212,7 @@
 		3237F82C6AE72AEE9FAD14EB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				2CCEE90F2174489700B7C054 /* AddCategory */,
 				D665560E216E4AEE00E9C21D /* CategorySelection */,
 				2D50F09D2167C5C900FFFD42 /* AddTransaction */,
 				3237FCB638AABA51B2BC5B3A /* WalletList */,
@@ -456,6 +473,7 @@
 				D66761192163C51800B07870 /* CreateWalletViewController.xib in Resources */,
 				D6859384215F54D900BA4511 /* Assets.xcassets in Resources */,
 				2D50F0A32167C64B00FFFD42 /* AddTransactionViewController.xib in Resources */,
+				2CCEE915217448D100B7C054 /* AddCategoryViewController.xib in Resources */,
 				D6A39BCC216079CA00D4643F /* WalletListTableViewCell.xib in Resources */,
 				D6301B85216F90DA00051102 /* CategorySelectionTableViewCell.xib in Resources */,
 				D6655614216E4B1D00E9C21D /* CategorySelectionViewController.xib in Resources */,
@@ -520,6 +538,7 @@
 				D64187AC215F5DA2009814F1 /* Transaction.swift in Sources */,
 				D6301B7B216F8C5000051102 /* Wallet+RxDataSources.swift in Sources */,
 				D6301B77216F8A5D00051102 /* BaseEntity+RxDataSources.swift in Sources */,
+				2CCEE911217448AD00B7C054 /* AddCategoryViewModel.swift in Sources */,
 				2D50F09F2167C5FD00FFFD42 /* AddTransactionViewModel.swift in Sources */,
 				D6301B7A216F8C5000051102 /* Transaction+RxDataSources.swift in Sources */,
 				D66761182163C51800B07870 /* CreateWalletViewController.swift in Sources */,
@@ -546,6 +565,7 @@
 				D6655613216E4B1D00E9C21D /* CategorySelectionViewController.swift in Sources */,
 				3237F88CC8DFEED5F3A307EF /* AppStep.swift in Sources */,
 				3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */,
+				2CCEE913217448BC00B7C054 /* AddCategoryViewController.swift in Sources */,
 				3237FCC8D611947342E32C72 /* WalletListViewController.swift in Sources */,
 				D6655610216E4B0100E9C21D /* CategorySelectionViewModel.swift in Sources */,
 				3237FDDDC0AE8C2AD6730100 /* WalletListViewModel.swift in Sources */,

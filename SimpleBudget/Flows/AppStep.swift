@@ -17,4 +17,6 @@ enum AppStep: Step {
 
   case categorySelection
   case categorySelected(category: Category)
+  case addCategory
+  case addCategorySuccess
 }

@@ -19,6 +19,13 @@ final class CategorySelectionViewModel: Stepper {
 
   private let budgetService: PersistenceServiceType
   private let disposeBag = DisposeBag()
+  
+  lazy var navigateToAddCategoryAction: CocoaAction = {
+    CocoaAction { [unowned self] in
+      self.step.accept(AppStep.addCategory)
+      return .empty()
+    }
+  }()
 
   init(budgetService: PersistenceServiceType) {
     self.budgetService = budgetService
