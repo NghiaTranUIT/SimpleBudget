@@ -128,7 +128,6 @@ class BudgetFlow: Flow {
   private func navigateToAddCategory() -> NextFlowItems {
     let viewModel = AddCategoryViewModel(budgetService: services.budgetService)
     var viewController = AddCategoryViewController()
-    viewController.title = "Add Category"
     viewController.bindViewModel(to: viewModel)
     
     rootViewController.pushViewController(viewController, animated: true)

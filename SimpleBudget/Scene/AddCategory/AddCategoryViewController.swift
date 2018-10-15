@@ -22,6 +22,7 @@ class AddCategoryViewController: UIViewController, Bindable {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    title = "Add Category"
     doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
     navigationItem.rightBarButtonItem = doneBarButtonItem
   }
