@@ -13,18 +13,19 @@ class WalletListViewController: UIViewController, Bindable {
   var viewModel: WalletListViewModel!
 
   lazy var tableView: UITableView = {
-    let tv = UITableView(frame: .zero)
-    tv.register(WalletListTableViewCell.self)
-    return tv
+    let tableView = UITableView(frame: .zero)
+    tableView.register(WalletListTableViewCell.self)
+    return tableView
   }()
 
   var addBudgetBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
 
   lazy var dataSources: RxTableViewSectionedAnimatedDataSource<SectionOfWallet> = {
-    let dataSources = RxTableViewSectionedAnimatedDataSource<SectionOfWallet>(configureCell: { (_, tableView, indexPath, budget) -> UITableViewCell in
-      let cell = tableView.dequeueReusableCell(for: indexPath, cellClass: WalletListTableViewCell.self)
-      cell.nameLabel.text = budget.name
-      return cell
+    let dataSources = RxTableViewSectionedAnimatedDataSource<SectionOfWallet>
+      .init(configureCell: { (_, tableView, indexPath, budget) -> UITableViewCell in
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellClass: WalletListTableViewCell.self)
+        cell.nameLabel.text = budget.name
+        return cell
     })
     dataSources.canEditRowAtIndexPath = { _, _ in
       true

@@ -19,11 +19,12 @@ class TransactionListViewController: UIViewController, Bindable {
   var viewModel: TransactionListViewModel!
 
   lazy var dataSources: RxTableViewSectionedAnimatedDataSource<SectionOfTransaction> = {
-    let dataSources = RxTableViewSectionedAnimatedDataSource<SectionOfTransaction>(configureCell: { (_, tableView, indexPath, trans) -> UITableViewCell in
-      let cell = tableView.dequeueReusableCell(for: indexPath, cellClass: TransactionListTableViewCell.self)
-      cell.amountLabel.text = "\(trans.amount)"
-      cell.noteLabel.text = trans.note
-      return cell
+    let dataSources = RxTableViewSectionedAnimatedDataSource<SectionOfTransaction>
+      .init(configureCell: { (_, tableView, indexPath, trans) -> UITableViewCell in
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellClass: TransactionListTableViewCell.self)
+        cell.amountLabel.text = "\(trans.amount)"
+        cell.noteLabel.text = trans.note
+        return cell
     })
     dataSources.canEditRowAtIndexPath = { _, _ in
       true

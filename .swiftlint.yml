@@ -12,7 +12,6 @@ opt_in_rules:
   - no_extension_access_modifier
   - operator_usage_whitespace
   - redundant_nil_coalescing
-  - trailing_closure
   - vertical_parameter_alignment_on_call
 
 included:
@@ -24,3 +23,9 @@ function_body_length:
 
 trailing_comma:
   mandatory_comma: true
+
+identifier_name:
+  min_length:
+    error: 3 
+  excluded:
+    - id

@@ -47,6 +47,7 @@ class AppFlow: Flow {
       self.window.rootViewController = root
     }
 
-    return .one(flowItem: NextFlowItem(nextPresentable: budgetFlow, nextStepper: OneStepper(withSingleStep: AppStep.walletList)))
+    return .one(flowItem: NextFlowItem(nextPresentable: budgetFlow,
+                                       nextStepper: OneStepper(withSingleStep: AppStep.walletList)))
   }
 }

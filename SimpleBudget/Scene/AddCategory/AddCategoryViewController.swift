@@ -14,11 +14,11 @@ import UIKit
 class AddCategoryViewController: UIViewController, Bindable {
 
   @IBOutlet weak var nameTextField: UITextField!
-  
+
   var doneBarButtonItem: UIBarButtonItem!
-  
+
   var viewModel: AddCategoryViewModel!
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -31,7 +31,7 @@ class AddCategoryViewController: UIViewController, Bindable {
     nameTextField.rx.text.orEmpty
       .bind(to: viewModel.categoryName)
       .disposed(by: rx.disposeBag)
-    
+
     doneBarButtonItem.rx.action = viewModel.categoryAddedAction
   }
 }

@@ -19,6 +19,7 @@ jobs:
           paths:
             - Carthage
       - run: bundle install
+      - run: bundle exec danger
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE

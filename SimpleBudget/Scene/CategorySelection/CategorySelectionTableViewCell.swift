@@ -10,6 +10,7 @@ import UIKit
 
 final class CategorySelectionTableViewCell: UITableViewCell, NibLoadableView {
   @IBOutlet var categoryLabel: UILabel!
+
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code

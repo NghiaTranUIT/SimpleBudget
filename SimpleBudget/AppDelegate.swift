@@ -14,7 +14,10 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  var window: UIWindow? = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+  var window: UIWindow? = UIWindow(frame: CGRect(x: 0,
+                                                 y: 0,
+                                                 width: UIScreen.main.bounds.width,
+                                                 height: UIScreen.main.bounds.height))
 
   var coordinator = Coordinator()
   var appFlow: AppFlow!
@@ -29,7 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }()
 
   func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    guard let window = window else { return false }
+    guard let window = window else {
+      return false
+    }
 
     window.makeKeyAndVisible()
 

@@ -11,6 +11,7 @@ import RealmSwift
 import RxRealm
 import RxSwift
 
+// swiftlint:disable unused_optional_binding
 enum PersistenceServiceError: Error {
   case creationFailed
   case deletionFailed
@@ -27,7 +28,10 @@ protocol PersistenceServiceType {
 
   // Transactions
   func transactions(walletId: String) -> Observable<[Transaction]>
-  func addTransaction(toWallet walletId: String, note: String, amount: Int, category: Category?) -> Observable<Transaction>
+  func addTransaction(toWallet walletId: String,
+                      note: String,
+                      amount: Int,
+                      category: Category?) -> Observable<Transaction>
   func deleteTransaction(id: String) -> Observable<Void>
 
   // Category
@@ -39,7 +43,7 @@ protocol PersistenceServiceType {
 }
 
 struct PersistenceService: PersistenceServiceType {
-  
+
   private let realm: Realm
   private let userDefaults: UserDefaults
 
@@ -63,7 +67,7 @@ struct PersistenceService: PersistenceServiceType {
 
   func wallets() -> Observable<[Wallet]> {
     let result = withRealm("Getting wallet list") { (realm) -> Observable<[Wallet]> in
-      return Observable.array(from: realm.objects(Wallet.self))
+      Observable.array(from: realm.objects(Wallet.self))
     }
 
     return result ?? .empty()
@@ -116,7 +120,10 @@ struct PersistenceService: PersistenceServiceType {
     return result ?? .empty()
   }
 
-  func addTransaction(toWallet walletId: String, note: String, amount: Int, category: Category?) -> Observable<Transaction> {
+  func addTransaction(toWallet walletId: String,
+                      note: String,
+                      amount: Int,
+                      category: Category?) -> Observable<Transaction> {
     let result = withRealm("Adding new transaction") { (realm) -> Observable<Transaction> in
 
       guard let wallet = realm.object(ofType: Wallet.self, forPrimaryKey: walletId) else {
@@ -161,27 +168,27 @@ struct PersistenceService: PersistenceServiceType {
 
   func categories() -> Observable<[Category]> {
     let result = withRealm("Getting categories list") { (realm) -> Observable<[Category]> in
-      return Observable.array(from: realm.objects(Category.self))
+      Observable.array(from: realm.objects(Category.self))
     }
 
     return result ?? .empty()
   }
-  
+
   func addCategory(name: String) -> Observable<Category> {
     let result = withRealm("Add category with name \(name)") { realm -> Observable<Category> in
-      
+
       let category = Category()
       category.name = name
-      
+
       guard let _ = try? realm.write({
         realm.add(category)
       }) else {
         return Observable.error(PersistenceServiceError.addCategoryFailed)
       }
-      
+
       return .just(category)
     }
-    
+
     return result ?? .empty()
   }
 
@@ -190,7 +197,7 @@ struct PersistenceService: PersistenceServiceType {
       return
     }
 
-    _ = withRealm("Seeding data", action: { (realm) -> Void in
+    _ = withRealm("Seeding data") { (realm) -> Void in
       let seedCategories = ["Shopping", "Education", "Food", "Rent", "Misc"].map { name -> Category in
         let category = Category()
         category.name = name
@@ -207,6 +214,7 @@ struct PersistenceService: PersistenceServiceType {
       }
 
       userDefaults.set(true, forKey: UserDefaultsKeys.isInitialDataSeeded.rawValue)
-    })
+    }
   }
 }
+// swiftlint:enable unused_optional_binding

@@ -24,7 +24,9 @@ class BudgetFlow: Flow {
   }
 
   func navigate(to step: Step) -> NextFlowItems {
-    guard let step = step as? AppStep else { return .none }
+    guard let step = step as? AppStep else {
+      return .none
+    }
 
     switch step {
     case .walletList:
@@ -124,12 +126,12 @@ class BudgetFlow: Flow {
     rootViewController.popViewController(animated: true)
     return .none
   }
-  
+
   private func navigateToAddCategory() -> NextFlowItems {
     let viewModel = AddCategoryViewModel(budgetService: services.budgetService)
     var viewController = AddCategoryViewController()
     viewController.bindViewModel(to: viewModel)
-    
+
     rootViewController.pushViewController(viewController, animated: true)
     return .one(flowItem: NextFlowItem(nextPresentable: viewController, nextStepper: viewModel))
   }
