@@ -8,6 +8,7 @@ import RxCocoa
 //
 import RxSwift
 
+// swiftlint:disable all
 private struct ActivityToken<E>: ObservableConvertibleType, Disposable {
   private let _source: Observable<E>
   private let _dispose: Cancelable
@@ -76,3 +77,4 @@ extension ObservableConvertibleType {
     return activityIndicator.trackActivityOfObservable(self)
   }
 }
+// swiftlint:enable all

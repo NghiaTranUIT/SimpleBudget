@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   let disposeBag = DisposeBag()
 
+  // swiftlint:disable force_try
   let budgetService = try! PersistenceService(config: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
 
   lazy var appServices = {

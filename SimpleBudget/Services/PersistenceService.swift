@@ -192,9 +192,9 @@ struct PersistenceService: PersistenceServiceType {
 
     _ = withRealm("Seeding data", action: { (realm) -> Void in
       let seedCategories = ["Shopping", "Education", "Food", "Rent", "Misc"].map { name -> Category in
-        let c = Category()
-        c.name = name
-        return c
+        let category = Category()
+        category.name = name
+        return category
       }
 
       let defaultWallet = Wallet()
