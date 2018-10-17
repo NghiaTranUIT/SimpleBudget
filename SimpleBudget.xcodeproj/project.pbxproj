@@ -17,6 +17,7 @@
 		3237FBC3F2F528F34A7FA796 /* BudgetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F31B569E1697CAD95BA5 /* BudgetFlow.swift */; };
 		3237FCC8D611947342E32C72 /* WalletListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237F560C25EBF206D0038F8 /* WalletListViewController.swift */; };
 		3237FDDDC0AE8C2AD6730100 /* WalletListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237FDBCB1291AE8F81304E5 /* WalletListViewModel.swift */; };
+		D6015A8221732C8A0017CC23 /* PersistenceServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6015A8121732C8A0017CC23 /* PersistenceServiceTest.swift */; };
 		D60D17D6216522C4001964A9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D17D4216522C4001964A9 /* Nimble.framework */; };
 		D60D17D7216522C4001964A9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D17D5216522C4001964A9 /* Quick.framework */; };
 		D60D17D921652347001964A9 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D17D821652347001964A9 /* RxBlocking.framework */; };
@@ -54,7 +55,6 @@
 		D685937D215F54D800BA4511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D685937C215F54D800BA4511 /* AppDelegate.swift */; };
 		D6859384215F54D900BA4511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6859383215F54D900BA4511 /* Assets.xcassets */; };
 		D6859387215F54D900BA4511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6859385215F54D900BA4511 /* LaunchScreen.storyboard */; };
-		D6859392215F54D900BA4511 /* SimpleBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6859391215F54D900BA4511 /* SimpleBudgetTests.swift */; };
 		D6A03E8D2166363900F07CAC /* Observable+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A03E8C2166363900F07CAC /* Observable+ActivityIndicator.swift */; };
 		D6A1FE632160661700A5F07D /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A1FE622160661700A5F07D /* AppFlow.swift */; };
 		D6A39BBE216070C600D4643F /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A39BBD216070C600D4643F /* Action.framework */; };
@@ -106,6 +106,7 @@
 		3237F560C25EBF206D0038F8 /* WalletListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletListViewController.swift; sourceTree = "<group>"; };
 		3237FA16B13ED4A2E89245AA /* AppStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
 		3237FDBCB1291AE8F81304E5 /* WalletListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletListViewModel.swift; sourceTree = "<group>"; };
+		D6015A8121732C8A0017CC23 /* PersistenceServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceTest.swift; sourceTree = "<group>"; };
 		D60D17D4216522C4001964A9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		D60D17D5216522C4001964A9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		D60D17D821652347001964A9 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
@@ -143,7 +144,6 @@
 		D6859386215F54D900BA4511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6859388215F54D900BA4511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D685938D215F54D900BA4511 /* SimpleBudgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleBudgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6859391215F54D900BA4511 /* SimpleBudgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBudgetTests.swift; sourceTree = "<group>"; };
 		D6859393215F54D900BA4511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6A03E8C2166363900F07CAC /* Observable+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		D6A1FE622160661700A5F07D /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
@@ -232,6 +232,14 @@
 				D6A39BCA216079CA00D4643F /* WalletListTableViewCell.xib */,
 			);
 			path = WalletList;
+			sourceTree = "<group>";
+		};
+		D6015A7F21732C650017CC23 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D6015A8121732C8A0017CC23 /* PersistenceServiceTest.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D641879F215F5920009814F1 /* Frameworks */ = {
@@ -340,7 +348,7 @@
 		D6859390215F54D900BA4511 /* SimpleBudgetTests */ = {
 			isa = PBXGroup;
 			children = (
-				D6859391215F54D900BA4511 /* SimpleBudgetTests.swift */,
+				D6015A7F21732C650017CC23 /* Services */,
 				D6859393215F54D900BA4511 /* Info.plist */,
 			);
 			path = SimpleBudgetTests;
@@ -439,6 +447,7 @@
 					};
 					D685938C215F54D900BA4511 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						TestTargetID = D6859378215F54D800BA4511;
 					};
 				};
@@ -576,7 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6859392215F54D900BA4511 /* SimpleBudgetTests.swift in Sources */,
+				D6015A8221732C8A0017CC23 /* PersistenceServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,6 +782,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EMR59SFZRH;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -787,6 +797,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.khoi.SimpleBudgetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleBudget.app/SimpleBudget";
@@ -798,6 +811,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EMR59SFZRH;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -812,6 +826,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.khoi.SimpleBudgetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleBudget.app/SimpleBudget";
