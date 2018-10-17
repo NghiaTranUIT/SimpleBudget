@@ -11,7 +11,6 @@ import RealmSwift
 import RxRealm
 import RxSwift
 
-// swiftlint:disable unused_optional_binding
 enum PersistenceServiceError: Error {
   case creationFailed
   case deletionFailed
@@ -217,4 +216,3 @@ struct PersistenceService: PersistenceServiceType {
     }
   }
 }
-// swiftlint:enable unused_optional_binding

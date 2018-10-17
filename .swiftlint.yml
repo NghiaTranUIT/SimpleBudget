@@ -16,7 +16,6 @@ opt_in_rules:
 
 included:
   - SimpleBudget
-  - SimpleBudgetTests
 
 function_body_length:
   warning: 50
@@ -29,3 +28,6 @@ identifier_name:
     error: 3 
   excluded:
     - id
+
+unused_optional_binding:
+  ignore_optional_try: true
